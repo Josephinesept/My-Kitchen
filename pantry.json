@@ -1,0 +1,123 @@
+{
+  "alwaysStocked": {
+    "Pantry": [
+      "white rice",
+      "lentils",
+      "black beans",
+      "white beans",
+      "red lentils",
+      "split peas",
+      "soy sauce",
+      "sesame oil",
+      "peanut butter",
+      "vinegar",
+      "coconut milk",
+      "curry paste",
+      "gochujang",
+      "gochugaru",
+      "pasta",
+      "crackers",
+      "canned fish",
+      "instant ramen"
+    ],
+    "Freezer": [
+      "frozen broccoli",
+      "frozen mixed vegetables",
+      "edamame",
+      "frozen dumplings"
+    ],
+    "Fridge": [
+      "eggs",
+      "Greek yogurt",
+      "tofu",
+      "cheese"
+    ],
+    "Produce basics": [
+      "onion",
+      "garlic",
+      "ginger",
+      "carrots",
+      "green onion",
+      "fruit"
+    ]
+  },
+  "minimumStock": [
+    {
+      "item": "Fairlife protein shakes",
+      "minimum": 4,
+      "locations": {
+        "home": 2,
+        "work": 2
+      },
+      "shoppingNote": "Consider ordering a larger case online when the price per bottle is better."
+    }
+  ],
+  "homemadeStaples": [
+    {
+      "id": "kimchi",
+      "name": "Kimchi",
+      "container": "Large kimchi tub",
+      "statuses": [
+        "Plenty available",
+        "Running low",
+        "Need to make"
+      ],
+      "ingredients": [
+        "Napa cabbage",
+        "salt",
+        "flour",
+        "sugar",
+        "daikon",
+        "carrot",
+        "green onion",
+        "garlic",
+        "ginger",
+        "onion",
+        "fish sauce",
+        "fermented shrimp",
+        "gochujang",
+        "gochugaru"
+      ]
+    },
+    {
+      "id": "pickles",
+      "name": "Mixed pickles",
+      "container": "Large pickle tub",
+      "statuses": [
+        "Plenty available",
+        "Running low",
+        "Need to make"
+      ],
+      "frequent": [
+        "cucumbers",
+        "carrots",
+        "red onion",
+        "jalape\u00f1os",
+        "cauliflower",
+        "eggs"
+      ],
+      "occasional": [
+        "radishes",
+        "daikon (Korean-style or kimchied)"
+      ],
+      "supplies": [
+        "vinegar",
+        "salt",
+        "sugar",
+        "garlic",
+        "dill",
+        "mustard seed",
+        "peppercorns",
+        "red pepper flakes"
+      ]
+    }
+  ],
+  "weekDefaults": {
+    "mainMeals": 2,
+    "soups": 1,
+    "emergencyOptions": 2,
+    "grazingSetups": 1,
+    "portableSnacks": 2,
+    "desserts": 1
+  }
+}
