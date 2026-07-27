@@ -7,14 +7,11 @@
       "white beans",
       "red lentils",
       "split peas",
-      "soy sauce",
-      "sesame oil",
       "peanut butter",
       "vinegar",
       "coconut milk",
       "curry paste",
       "gochujang",
-      "gochugaru",
       "pasta",
       "crackers",
       "canned fish",
@@ -36,6 +33,8 @@
       "onion",
       "garlic",
       "ginger",
+      "carrots",
+      "green onion",
       "fruit"
     ]
   },
@@ -47,7 +46,7 @@
         "home": 2,
         "work": 2
       },
-      "shoppingNote": "Buy a case if below 2 total"
+      "shoppingNote": "Consider ordering a larger case online when the price per bottle is better."
     }
   ],
   "homemadeStaples": [
@@ -117,5 +116,89 @@
     "grazingSetups": 1,
     "portableSnacks": 2,
     "desserts": 1
+  },
+  "spicesFlavorings": {
+    "Salt, Baking & Staples": [
+      "kosher salt",
+      "white sugar",
+      "brown sugar",
+      "flour",
+      "cornstarch",
+      "baking powder",
+      "baking soda",
+      "vanilla extract",
+      "yeast"
+    ],
+    "Herbs & Spices": [
+      "oregano",
+      "basil",
+      "thyme",
+      "rosemary",
+      "sage",
+      "dried parsley",
+      "dill",
+      "smoked paprika",
+      "garlic powder",
+      "onion powder",
+      "cumin",
+      "coriander",
+      "turmeric",
+      "cayenne",
+      "chili powder",
+      "red pepper flakes",
+      "cinnamon",
+      "nutmeg",
+      "ground ginger"
+    ],
+    "Asian & Curry": [
+      "gochugaru",
+      "garam masala",
+      "curry powder"
+    ],
+    "Umami & Broth": [
+      "Better Than Bouillon",
+      "stock cubes",
+      "Trader Joe's mushroom umami seasoning",
+      "MSG"
+    ],
+    "Oils & Vinegars": [
+      "olive oil",
+      "neutral oil",
+      "sesame oil",
+      "rice vinegar",
+      "white vinegar",
+      "apple cider vinegar"
+    ],
+    "Condiments": [
+      "soy sauce",
+      "fish sauce",
+      "honey",
+      "ketchup"
+    ]
+  },
+  "householdPet": {
+    "Household": [
+      "dish soap",
+      "dishwasher detergent",
+      "paper towels",
+      "toilet paper",
+      "laundry detergent",
+      "trash bags",
+      "cleaning spray",
+      "sponges"
+    ],
+    "Personal Care": [
+      "hand soap",
+      "shampoo",
+      "conditioner",
+      "body wash or bar soap",
+      "toothpaste",
+      "deodorant"
+    ],
+    "Pet Supplies": [
+      "cat food",
+      "cat treats",
+      "cat litter"
+    ]
   }
 }
