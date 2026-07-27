@@ -182,7 +182,7 @@
     "Household": [
       "dish soap",
       "dishwasher detergent",
-      "paper towels",
+      "clorox wipes",
       "toilet paper",
       "laundry detergent",
       "trash bags",
@@ -199,8 +199,7 @@
     ],
     "Pet Supplies": [
       "cat food",
-      "cat treats",
-      "cat litter"
+      "cat treats"
     ]
   }
 }
