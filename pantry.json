@@ -16,7 +16,8 @@
       "crackers",
       "canned fish",
       "instant ramen",
-      "chia seeds"
+      "chia seeds",
+      "instant oatmeal"
     ],
     "Freezer": [
       "frozen broccoli",
@@ -32,10 +33,10 @@
       "cottage cheese"
     ],
     "Produce basics": [
-      "onion",
+      "onions",
       "garlic",
       "ginger",
-      "green onion",
+      "green onions",
       "fruit"
     ]
   },
@@ -47,7 +48,7 @@
         "home": 2,
         "work": 2
       },
-      "shoppingNote": "Buy case if less than 2."
+      "shoppingNote": "Consider ordering a larger case online when the price per bottle is better."
     }
   ],
   "homemadeStaples": [
@@ -61,16 +62,16 @@
         "Need to make"
       ],
       "ingredients": [
-        "Napa cabbage",
+        "Napa cabbages",
         "salt",
         "flour",
         "sugar",
-        "daikon",
-        "carrot",
-        "green onion",
+        "daikons",
+        "carrots",
+        "green onions",
         "garlic",
         "ginger",
-        "onion",
+        "onions",
         "fish sauce",
         "fermented shrimp",
         "gochujang",
@@ -87,16 +88,16 @@
         "Need to make"
       ],
       "frequent": [
-        "cucumber",
+        "cucumbers",
         "carrots",
-        "red onion",
-        "jalapeño",
+        "red onions",
+        "jalapeños",
         "cauliflower",
         "eggs"
       ],
       "occasional": [
         "radishes",
-        "daikon (Korean-style or kimchied)"
+        "daikons (Korean-style or kimchied)"
       ],
       "supplies": [
         "vinegar",
@@ -104,7 +105,7 @@
         "sugar",
         "garlic",
         "dill",
-        "mustard seed",
+        "mustard seeds",
         "peppercorns",
         "red pepper flakes"
       ]
@@ -175,15 +176,15 @@
       "fish sauce",
       "honey",
       "ketchup",
-      "mustard",
-      "chili crisp"
+      "chili crunch",
+      "mustard"
     ]
   },
   "householdPet": {
     "Household": [
       "dish soap",
       "dishwasher detergent",
-      "clorox wipes",
+      "Clorox wipes",
       "toilet paper",
       "laundry detergent",
       "trash bags",

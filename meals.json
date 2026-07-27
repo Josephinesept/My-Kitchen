@@ -101,8 +101,8 @@
                 "spinach",
                 "peas",
                 "corn",
-                "bell pepper",
-                "cucumber",
+                "bell peppers",
+                "cucumbers",
                 "snow peas",
                 "bean sprouts",
                 "frozen vegetable mix",
@@ -113,14 +113,14 @@
             "chooseOne": {
               "protein": [
                 "tofu",
-                "egg",
+                "eggs",
                 "chicken"
               ]
             },
             "optional": [
               "kimchi",
               "sesame seeds",
-              "green onion",
+              "green onions",
               "seaweed"
             ]
           },
@@ -172,8 +172,8 @@
                 "spinach",
                 "peas",
                 "corn",
-                "bell pepper",
-                "cucumber",
+                "bell peppers",
+                "cucumbers",
                 "snow peas",
                 "bean sprouts",
                 "frozen vegetable mix",
@@ -191,9 +191,9 @@
               ]
             },
             "optional": [
-              "egg",
+              "eggs",
               "edamame",
-              "green onion",
+              "green onions",
               "sesame seeds",
               "kimchi"
             ]
@@ -234,8 +234,8 @@
             "required": [
               "Japanese curry roux",
               "white rice",
-              "onion",
-              "carrot"
+              "onions",
+              "carrots"
             ],
             "chooseOne": {
               "protein": [
@@ -245,7 +245,7 @@
               ]
             },
             "optional": [
-              "thin-sliced potato",
+              "thin-sliced potatoes",
               "mushrooms",
               "peas",
               "cauliflower"
@@ -296,10 +296,10 @@
                 "corn",
                 "mushrooms",
                 "cabbage",
-                "green onion",
+                "green onions",
                 "broccoli",
                 "green beans",
-                "bell pepper",
+                "bell peppers",
                 "snow peas",
                 "bean sprouts",
                 "frozen vegetable mix",
@@ -310,8 +310,8 @@
             "chooseOne": {
               "protein": [
                 "tofu",
-                "egg",
-                "both tofu and egg"
+                "eggs",
+                "both tofu and eggs"
               ]
             },
             "optional": [
@@ -354,7 +354,7 @@
           "ingredients": {
             "required": [
               "tomato sauce or crushed tomatoes",
-              "onion",
+              "onions",
               "garlic",
               "ginger",
               "Indian spices",
@@ -413,7 +413,7 @@
           ],
           "ingredients": {
             "required": [
-              "onion",
+              "onions",
               "garlic",
               "ginger",
               "korma spices or paste",
@@ -478,7 +478,7 @@
             "required": [
               "red lentils",
               "coconut milk",
-              "onion",
+              "onions",
               "garlic",
               "ginger",
               "curry spices"
@@ -494,7 +494,7 @@
             "optional": [
               "white rice",
               "cilantro",
-              "lime"
+              "limes"
             ]
           },
           "nutrition": {
@@ -537,18 +537,18 @@
               "black beans",
               "another preferred bean",
               "corn",
-              "lime"
+              "limes"
             ],
             "chooseSeveral": {
               "vegetables": [
                 "tomatoes",
-                "cucumber",
-                "bell pepper",
-                "red onion",
-                "jalapeño",
-                "avocado",
+                "cucumbers",
+                "bell peppers",
+                "red onions",
+                "jalapeños",
+                "avocados",
                 "cilantro",
-                "green onion"
+                "green onions"
               ]
             },
             "chooseOne": {
@@ -611,10 +611,10 @@
                 "spinach",
                 "tomatoes",
                 "cilantro",
-                "onion",
-                "bell pepper",
-                "avocado",
-                "jalapeño",
+                "onions",
+                "bell peppers",
+                "avocados",
+                "jalapeños",
                 "corn",
                 "mushrooms",
                 "zucchini",
@@ -628,8 +628,8 @@
               ]
             },
             "optional": [
-              "lime",
-              "green onion",
+              "limes",
+              "green onions",
               "chili crunch"
             ]
           },
@@ -671,7 +671,7 @@
               "salt"
             ],
             "optional": [
-              "green onion",
+              "green onions",
               "garlic",
               "sour cream",
               "Greek yogurt",
@@ -715,7 +715,7 @@
             "required": [
               "lentils",
               "mushrooms",
-              "onion",
+              "onions",
               "carrots",
               "peas",
               "potatoes"
@@ -762,7 +762,7 @@
           "ingredients": {
             "required": [
               "mixed vegetables",
-              "onion",
+              "onions",
               "creamy sauce or gravy",
               "puff pastry, crust, or biscuits"
             ],
@@ -828,9 +828,9 @@
             "optional": [
               "corn",
               "peppers",
-              "onion",
+              "onions",
               "Greek yogurt",
-              "avocado"
+              "avocados"
             ]
           },
           "nutrition": {
@@ -877,13 +877,13 @@
             "required": [
               "white beans",
               "kale or another green",
-              "onion",
+              "onions",
               "garlic",
               "broth"
             ],
             "optional": [
               "tomatoes",
-              "lemon",
+              "lemons",
               "rosemary",
               "Parmesan",
               "sourdough"
@@ -924,14 +924,14 @@
           "ingredients": {
             "required": [
               "lentils",
-              "onion",
+              "onions",
               "carrots",
               "broth"
             ],
             "optional": [
               "tomatoes",
               "spinach",
-              "lemon",
+              "lemons",
               "herbs",
               "sourdough"
             ]
@@ -971,7 +971,7 @@
           "ingredients": {
             "required": [
               "black beans",
-              "onion",
+              "onions",
               "garlic",
               "broth",
               "spices"
@@ -979,9 +979,9 @@
             "optional": [
               "corn",
               "tomatoes",
-              "lime",
+              "limes",
               "Greek yogurt",
-              "avocado",
+              "avocados",
               "chips"
             ]
           },
@@ -1020,7 +1020,7 @@
           "ingredients": {
             "required": [
               "split peas",
-              "onion",
+              "onions",
               "carrots",
               "broth"
             ],
@@ -1069,8 +1069,8 @@
             ],
             "optional": [
               "mushrooms",
-              "onion",
-              "green onion",
+              "onions",
+              "green onions",
               "gochujang",
               "white rice"
             ]
@@ -1129,7 +1129,7 @@
             },
             "optional": [
               "rice noodles",
-              "lime",
+              "limes",
               "cilantro"
             ]
           },
@@ -1212,8 +1212,8 @@
           ],
           "ingredients": {
             "required": [
-              "tomatoes or canned tomato",
-              "onion or garlic",
+              "tomatoes or canned tomatoes",
+              "onions or garlic",
               "broth"
             ],
             "optional": [
@@ -1260,7 +1260,7 @@
             "optional": [
               "tofu",
               "seaweed",
-              "green onion",
+              "green onions",
               "mushrooms",
               "noodles"
             ]
@@ -1299,7 +1299,7 @@
           "ingredients": {
             "required": [
               "broth",
-              "onion",
+              "onions",
               "mixed vegetables"
             ],
             "optional": [
@@ -1347,8 +1347,8 @@
               "broth"
             ],
             "optional": [
-              "onion",
-              "carrot",
+              "onions",
+              "carrots",
               "sourdough"
             ]
           },
@@ -1418,7 +1418,7 @@
       "items": [
         {
           "id": "fairlife",
-          "name": "Fairlife protein shake",
+          "name": "Fairlife protein shakes",
           "energy": "None",
           "minutes": 0,
           "stockRule": "Keep 4 total: 2 at home and 2 at work.",
@@ -1431,7 +1431,7 @@
           ],
           "ingredients": {
             "required": [
-              "Fairlife protein shake"
+              "Fairlife protein shakes"
             ]
           },
           "nutrition": {
@@ -1696,7 +1696,7 @@
               "instant ramen"
             ],
             "optional": [
-              "egg",
+              "eggs",
               "tofu",
               "frozen vegetables",
               "kimchi",
@@ -1733,7 +1733,7 @@
           ],
           "ingredients": {
             "required": [
-              "tortilla",
+              "tortillas",
               "cheese"
             ],
             "optional": [
@@ -1860,14 +1860,14 @@
               "canned tuna",
               "sardines",
               "cheese",
-              "Greek yogurt dip"
+              "Greek yogurt dips"
             ],
             "crunch": [
               "crackers",
               "toast",
-              "cucumber",
+              "cucumbers",
               "carrots",
-              "bell pepper",
+              "bell peppers",
               "seaweed snacks"
             ],
             "acid": [
@@ -1880,7 +1880,7 @@
               "olives"
             ],
             "produce": [
-              "apple",
+              "apples",
               "grapes",
               "clementine",
               "berries",
@@ -1924,14 +1924,14 @@
           "ingredients": {
             "chooseSeveral": {
               "options": [
-                "Fairlife shake",
-                "apple",
-                "banana",
+                "Fairlife shakes",
+                "apples",
+                "bananas",
                 "clementines",
                 "Greek yogurt",
                 "trail mix",
                 "crackers",
-                "cheese stick",
+                "cheese sticks",
                 "seaweed snacks",
                 "peanut butter crackers",
                 "roasted chickpeas"
