@@ -1,4 +1,4 @@
-JOSEPHINE'S KITCHEN — VERSION 5.0
+JOSEPHINE'S KITCHEN — VERSION 5.1
 
 FILES
 - index.html: the complete app, with all meal data embedded so it works by itself.
@@ -21,6 +21,8 @@ SHOPPING FEATURES
 - Tap Remember on a manual item to save it as a recurring pantry item.
 - Copy exports a clean one-item-per-line list.
 - Send to Reminders opens the iOS Share Sheet with the same clean list for an Apple Shortcut.
+- Clear grocery list ends the current shopping session, removes one-off items, resets grocery checkmarks, and leaves meal plans, pantry data, and remembered items intact.
+- After clearing, Start new list restores a fresh list from the current week and pantry; changing the week or pantry also starts a fresh list automatically.
 
 DATA
 The app saves the current week, pantry checks, homemade-staple status, grocery checks, manual additions, and remembered items in Safari local storage on that iPhone. Remembering an item updates local app data; a static website cannot rewrite pantry.json on the server.

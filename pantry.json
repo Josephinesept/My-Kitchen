@@ -29,7 +29,6 @@
       "eggs",
       "tofu",
       "cheese",
-      "milk",
       "yogurt",
       "cottage cheese"
     ],
@@ -38,8 +37,7 @@
       "garlic",
       "ginger",
       "green onions",
-      "fruit",
-      "lemonade mix"
+      "fruit"
     ]
   },
   "minimumStock": [
@@ -178,7 +176,6 @@
       "fish sauce",
       "honey",
       "ketchup",
-      "relish",
       "chili crunch",
       "mustard"
     ]
