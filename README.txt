@@ -1,21 +1,22 @@
-JOSEPHINE'S KITCHEN
+JOSEPHINE'S KITCHEN — UPDATE 2
 
-FILES
-- index.html: the complete app, with all meal data embedded so it works by itself.
-- meals.json: editable reference copy of the meal and nutrition data.
-- pantry.json: editable reference copy of pantry, kimchi, pickle, and Fairlife settings.
-- manifest.json, sw.js, and icons: allow home-screen and offline behavior when hosted.
+This version includes:
+- Blue color scheme
+- Removed subtitle under the app title
+- Week plans persist and are never regenerated merely by opening the Week tab
+- Add Meals button on the Week tab
+- Confirmation before replacing a nonempty week with a suggested week
+- Saved ingredient-option checkboxes for proteins, vegetables, sauces, and optional additions
+- Shopping list uses those saved selections
+- Unchecked pantry staples appear as "pantry low"
+- Shopping counters show how many selected weekly recipes use each ingredient
+- Updated service worker so future GitHub updates appear more reliably
 
-IPHONE USE
-1. Upload this whole folder to any static website host.
-2. Open index.html in Safari.
-3. Tap Share.
-4. Tap Add to Home Screen.
+TO UPDATE GITHUB PAGES
+1. Unzip this package.
+2. In your GitHub repository, replace the existing files with all files from this folder.
+3. Commit the changes.
+4. GitHub Pages will rebuild automatically.
+5. On the iPhone, fully close and reopen the Kitchen app. If the old version remains, open the site in Safari and refresh once.
 
-Important: iPhone Safari does not reliably run a full app directly from local files. Hosting the folder is the dependable way to get home-screen and offline behavior.
-
-DATA
-The app saves the current week, pantry checks, homemade-staple status, and grocery checks in Safari local storage on that iPhone.
-
-NUTRITION
-Calories, protein, and fiber are rough per-serving ranges, not calculated nutrition facts.
+Your existing week, pantry status, shopping checks, and meal selections are stored locally on your phone and should remain after the update.
