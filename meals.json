@@ -537,8 +537,7 @@
               "black beans",
               "another preferred bean",
               "corn",
-              "lime",
-              "seasoning"
+              "lime"
             ],
             "chooseSeveral": {
               "vegetables": [
@@ -580,6 +579,75 @@
               20
             ],
             "notes": "Chips, tortillas, avocado, and cottage cheese create most of the range."
+          }
+        },
+        {
+          "id": "nachos",
+          "name": "Loaded nachos",
+          "summary": "Nachos with beans, spinach, vegetables, salsa, sour cream, and other chosen toppings.",
+          "tags": [
+            "Low",
+            "Under 30 minutes",
+            "Any season",
+            "Weeknight dinner",
+            "Bean-based",
+            "Vegetable-heavy",
+            "Flexible protein",
+            "Frequent favorite"
+          ],
+          "ingredients": {
+            "required": [
+              "tortilla chips"
+            ],
+            "chooseOne": {
+              "beans": [
+                "black beans",
+                "pinto beans",
+                "refried beans"
+              ]
+            },
+            "chooseSeveral": {
+              "vegetables": [
+                "spinach",
+                "tomatoes",
+                "cilantro",
+                "onion",
+                "bell pepper",
+                "avocado",
+                "jalapeño",
+                "corn",
+                "mushrooms",
+                "zucchini",
+                "frozen vegetable mix"
+              ],
+              "toppings": [
+                "sour cream",
+                "salsa",
+                "cottage cheese",
+                "cheese"
+              ]
+            },
+            "optional": [
+              "lime",
+              "green onion",
+              "chili crunch"
+            ]
+          },
+          "nutrition": {
+            "serving": "1 loaded plate",
+            "calories": [
+              500,
+              900
+            ],
+            "protein": [
+              18,
+              35
+            ],
+            "fiber": [
+              10,
+              20
+            ],
+            "notes": "Beans, vegetables, cheese, sour cream, and portion size create most of the range."
           }
         },
         {
