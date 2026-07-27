@@ -15,7 +15,7 @@
       "Under 5 minutes",
       "Under 15 minutes",
       "Under 30 minutes",
-      "30\u201360 minutes",
+      "30–60 minutes",
       "Over 1 hour",
       "Mostly unattended"
     ],
@@ -76,7 +76,7 @@
           "summary": "A composed rice bowl with several vegetables, protein, kimchi, and gochujang.",
           "tags": [
             "Moderate",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Any season",
             "Refrigerates well",
             "Batch cooking",
@@ -92,12 +92,22 @@
             ],
             "chooseSeveral": {
               "vegetables": [
-                "spinach",
+                "broccoli",
                 "carrots",
                 "mushrooms",
                 "zucchini",
+                "cabbage",
+                "green beans",
+                "spinach",
+                "peas",
+                "corn",
+                "bell pepper",
+                "cucumber",
+                "snow peas",
                 "bean sprouts",
-                "cucumber"
+                "frozen vegetable mix",
+                "frozen stir-fry mix",
+                "kimchi"
               ]
             },
             "chooseOne": {
@@ -160,7 +170,14 @@
                 "cabbage",
                 "green beans",
                 "spinach",
-                "frozen stir-fry vegetables"
+                "peas",
+                "corn",
+                "bell pepper",
+                "cucumber",
+                "snow peas",
+                "bean sprouts",
+                "frozen vegetable mix",
+                "frozen stir-fry mix"
               ]
             },
             "chooseOne": {
@@ -204,7 +221,7 @@
           "summary": "Mild, thick curry with vegetables and rice; useful as an occasional comfort meal.",
           "tags": [
             "Low",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cool weather",
             "Cold weather",
             "Refrigerates well",
@@ -280,6 +297,13 @@
                 "mushrooms",
                 "cabbage",
                 "green onion",
+                "broccoli",
+                "green beans",
+                "bell pepper",
+                "snow peas",
+                "bean sprouts",
+                "frozen vegetable mix",
+                "frozen stir-fry mix",
                 "kimchi"
               ]
             },
@@ -319,7 +343,7 @@
           "summary": "Tomato-rich Indian curry with cauliflower and either tofu or chicken.",
           "tags": [
             "Moderate",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Any season",
             "Refrigerates well",
             "Freezes well",
@@ -379,7 +403,7 @@
           "summary": "Creamy, aromatic curry with cauliflower and flexible protein.",
           "tags": [
             "Moderate",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Any season",
             "Refrigerates well",
             "Freezes well",
@@ -439,7 +463,7 @@
           "summary": "A pantry-friendly, high-fiber curry with lentils, coconut milk, and vegetables.",
           "tags": [
             "Low",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cool weather",
             "Cold weather",
             "Freezes well",
@@ -493,7 +517,7 @@
         {
           "id": "cowboy-caviar",
           "name": "Cowboy caviar",
-          "summary": "A cold bean, corn, and vegetable mixture served plain, with chips, in tortillas, or over rice.",
+          "summary": "A cold bean, corn, and vegetable mixture eaten plain or served with chips, tortillas, rice, or greens.",
           "tags": [
             "Very low",
             "Under 30 minutes",
@@ -513,22 +537,24 @@
               "black beans",
               "another preferred bean",
               "corn",
-              "tomatoes",
               "lime",
               "seasoning"
             ],
             "chooseSeveral": {
               "vegetables": [
+                "tomatoes",
+                "cucumber",
                 "bell pepper",
                 "red onion",
-                "jalape\u00f1o",
+                "jalapeño",
                 "avocado",
-                "cilantro"
+                "cilantro",
+                "green onion"
               ]
             },
             "chooseOne": {
               "serving": [
-                "plain",
+                "plain (nothing extra)",
                 "with tortilla chips",
                 "in tortillas",
                 "over rice",
@@ -536,9 +562,7 @@
               ]
             },
             "optional": [
-              "cheese",
-              "Greek yogurt",
-              "hot sauce"
+              "cottage cheese"
             ]
           },
           "nutrition": {
@@ -555,7 +579,7 @@
               12,
               20
             ],
-            "notes": "Chips, tortillas, avocado, and cheese create most of the range."
+            "notes": "Chips, tortillas, avocado, and cottage cheese create most of the range."
           }
         },
         {
@@ -564,7 +588,7 @@
           "summary": "Savory zucchini pancakes with sour cream or yogurt.",
           "tags": [
             "Moderate",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Warm weather",
             "Best fresh",
             "Weeknight dinner",
@@ -713,7 +737,7 @@
           "summary": "An occasional reminder meal for when a baked, saucy tortilla dish sounds good.",
           "tags": [
             "Moderate",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Any season",
             "Refrigerates well",
             "Reheats well",
@@ -742,7 +766,7 @@
             ]
           },
           "nutrition": {
-            "serving": "2\u20133 enchiladas",
+            "serving": "2–3 enchiladas",
             "calories": [
               500,
               850
@@ -770,7 +794,7 @@
           "summary": "A favorite hearty white bean stew with greens and herbs.",
           "tags": [
             "Low",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cool weather",
             "Cold weather",
             "Freezes well",
@@ -820,7 +844,7 @@
           "summary": "A flexible everyday lentil soup: Mediterranean, tomato, lemon, or spinach.",
           "tags": [
             "Low",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cool weather",
             "Cold weather",
             "Freezes well",
@@ -867,7 +891,7 @@
           "summary": "Smoky or Southwest-style, blended or chunky.",
           "tags": [
             "Low",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cool weather",
             "Cold weather",
             "Freezes well",
@@ -1064,7 +1088,7 @@
           "summary": "A vegetable-heavy clean-out-the-fridge soup with beans and pasta.",
           "tags": [
             "Low",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cool weather",
             "Cold weather",
             "Freezes well",
@@ -1196,7 +1220,7 @@
           "summary": "A general use-up soup for whatever vegetables are available.",
           "tags": [
             "Low",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cool weather",
             "Cold weather",
             "Freezes well",
@@ -1242,7 +1266,7 @@
           "summary": "A richer occasional comfort soup.",
           "tags": [
             "Moderate",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cold weather",
             "Refrigerates well",
             "Occasional reminder"
@@ -1283,7 +1307,7 @@
           "summary": "An occasional smooth comfort soup despite potatoes not being a frequent choice.",
           "tags": [
             "Moderate",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cold weather",
             "Refrigerates well",
             "Occasional reminder"
@@ -1572,7 +1596,7 @@
             ]
           },
           "nutrition": {
-            "serving": "2\u20133 eggs with toast",
+            "serving": "2–3 eggs with toast",
             "calories": [
               350,
               650
@@ -1754,7 +1778,7 @@
         {
           "id": "grazing-template",
           "name": "Generate a grazing plate",
-          "summary": "Choose 1\u20132 proteins, 1 crunch, 1 acidic item, 1 fruit or vegetable, and an optional extra.",
+          "summary": "Choose 1–2 proteins, 1 crunch, 1 acidic item, 1 fruit or vegetable, and an optional extra.",
           "tags": [
             "No preparation",
             "Under 5 minutes",
@@ -1783,7 +1807,7 @@
               "pickled carrots",
               "pickled cauliflower",
               "pickled red onion",
-              "pickled jalape\u00f1os",
+              "pickled jalapeños",
               "kimchi",
               "olives"
             ],
@@ -1847,7 +1871,7 @@
             }
           },
           "nutrition": {
-            "serving": "1\u20132 snacks",
+            "serving": "1–2 snacks",
             "calories": [
               100,
               450
@@ -1862,6 +1886,43 @@
             ],
             "notes": "Choose a protein-forward option when the snack needs to carry a meal gap."
           }
+        },
+        {
+          "id": "cottage-cheese-snack",
+          "name": "Cottage cheese snack",
+          "summary": "Cottage cheese with chili crunch and honey.",
+          "tags": [
+            "No preparation",
+            "Under 5 minutes",
+            "Grazing",
+            "High protein",
+            "Regular option"
+          ],
+          "ingredients": {
+            "required": [
+              "cottage cheese"
+            ],
+            "optional": [
+              "chili crunch",
+              "honey"
+            ]
+          },
+          "nutrition": {
+            "serving": "1 snack bowl",
+            "calories": [
+              180,
+              350
+            ],
+            "protein": [
+              20,
+              30
+            ],
+            "fiber": [
+              0,
+              2
+            ],
+            "notes": "Honey and chili crunch affect the upper end."
+          }
         }
       ]
     },
@@ -1871,8 +1932,8 @@
       "items": [
         {
           "id": "yogurt-dessert",
-          "name": "Greek yogurt dessert",
-          "summary": "The everyday favorite with fruit, chia, and honey or jam.",
+          "name": "Yogurt dessert",
+          "summary": "Yogurt with chia seeds and either frozen fruit or banana.",
           "tags": [
             "No preparation",
             "Under 5 minutes",
@@ -1883,29 +1944,15 @@
           ],
           "ingredients": {
             "required": [
-              "Greek yogurt",
+              "yogurt",
               "chia seeds"
             ],
             "chooseOne": {
               "fruit": [
-                "berries",
-                "cherries",
-                "peach",
-                "apple"
+                "frozen fruit",
+                "bananas"
               ]
-            },
-            "chooseOneExtra": {
-              "sweetener": [
-                "honey",
-                "jam",
-                "apple butter"
-              ]
-            },
-            "optional": [
-              "granola",
-              "nuts",
-              "cinnamon"
-            ]
+            }
           },
           "nutrition": {
             "serving": "1 dessert bowl",
@@ -1921,7 +1968,7 @@
               6,
               13
             ],
-            "notes": "Granola, nuts, and sweetener move this upward."
+            "notes": "Fruit amount and yogurt type create most of the range."
           }
         },
         {
@@ -1972,7 +2019,7 @@
           "summary": "A warm occasional dessert.",
           "tags": [
             "Moderate",
-            "30\u201360 minutes",
+            "30–60 minutes",
             "Cool weather",
             "Cold weather",
             "Good for guests",

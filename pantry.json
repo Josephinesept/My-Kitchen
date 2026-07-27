@@ -15,7 +15,8 @@
       "pasta",
       "crackers",
       "canned fish",
-      "instant ramen"
+      "instant ramen",
+      "chia seeds"
     ],
     "Freezer": [
       "frozen broccoli",
@@ -25,14 +26,17 @@
     ],
     "Fridge": [
       "eggs",
-      "Greek yogurt",
       "tofu",
-      "cheese"
+      "cheese",
+      "yogurt",
+      "cottage cheese"
     ],
     "Produce basics": [
       "onion",
       "garlic",
       "ginger",
+      "carrots",
+      "green onion",
       "fruit"
     ]
   },
@@ -44,7 +48,7 @@
         "home": 2,
         "work": 2
       },
-      "shoppingNote": "Buy a case if less than 2."
+      "shoppingNote": "Consider ordering a larger case online when the price per bottle is better."
     }
   ],
   "homemadeStaples": [
@@ -87,7 +91,7 @@
         "cucumbers",
         "carrots",
         "red onion",
-        "jalape\u00f1os",
+        "jalapeños",
         "cauliflower",
         "eggs"
       ],
@@ -171,7 +175,8 @@
       "soy sauce",
       "fish sauce",
       "honey",
-      "ketchup"
+      "ketchup",
+      "chili crunch"
     ]
   },
   "householdPet": {
