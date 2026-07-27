@@ -35,7 +35,6 @@
       "onion",
       "garlic",
       "ginger",
-      "carrots",
       "green onion",
       "fruit"
     ]
@@ -48,7 +47,7 @@
         "home": 2,
         "work": 2
       },
-      "shoppingNote": "Consider ordering a larger case online when the price per bottle is better."
+      "shoppingNote": "Buy case if less than 2."
     }
   ],
   "homemadeStaples": [
