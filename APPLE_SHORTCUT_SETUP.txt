@@ -1,0 +1,28 @@
+APPLE SHORTCUT SETUP — GROCERY LIST TO REMINDERS
+
+This is a one-time setup in Apple's Shortcuts app.
+
+1. In Reminders, create a list named Grocery List and set its List Type to Groceries.
+2. Open Shortcuts and create a new shortcut named Add Grocery List.
+3. Open the shortcut details and turn on Show in Share Sheet.
+4. Limit the accepted share-sheet input to Text.
+5. Add these actions in order:
+   a. Split Text
+      - Text: Shortcut Input
+      - Separator: New Lines
+   b. Repeat with Each Item in Split Text
+   c. Inside the repeat, add If and check that Repeat Item has any value.
+   d. Inside the If, add Add New Reminder:
+      - Title: Repeat Item
+      - List: Grocery List
+6. Save the shortcut.
+
+USING IT
+1. Open Josephine's Kitchen and go to Shopping.
+2. Check off anything you do not want exported.
+3. Tap “Send to Reminders.”
+4. Choose “Add Grocery List” from the Share Sheet.
+
+Each exported line becomes a separate reminder. The app intentionally exports no headings, bullets, recipe notes, or section labels, so Apple Reminders receives clean grocery-item titles.
+
+If the shortcut does not appear, scroll to the bottom of the Share Sheet, tap Edit Actions, and enable it.
