@@ -9,7 +9,2882 @@
 <section id="shopping" class="panel"><div class="section-title"><h2>Shopping</h2></div><div class="card shopping-actions"><button class="secondary" id="copyBtn">📋 Copy</button><button id="shareRemindersBtn">🍎 Send to Reminders</button><button class="danger" id="clearShoppingBtn">Clear grocery list</button></div><div class="card"><label class="row"><input id="includeQuick" type="checkbox" checked><span>Restore quick-meal coverage when below target</span></label></div><div class="card"><h3>Add one-off item</h3><div class="manual-form"><input id="manualItemName" type="text" placeholder="e.g. birthday card"><input id="manualItemQty" type="text" placeholder="Qty"><button class="secondary" id="addManualItemBtn">+ Add item</button></div><p class="small">One-off items stay here until you delete them. Use Remember to turn a recurring item into a pantry item.</p></div><div id="shoppingList"></div></section>
 <section id="pantry" class="panel"><div class="section-title"><h2>Pantry & supplies</h2><button class="secondary" id="inventoryModeBtn">Inventory mode</button></div><p class="small">Tap a status to cycle through Plenty, Low, and Out.</p><div id="inventoryBanner"></div><div id="pantryList"></div></section>
 </main><nav><button class="active" data-panel="home"><span>🏠</span>Home</button><button data-panel="meals"><span>🍚</span>Meals</button><button data-panel="week"><span>✨</span>Week</button><button data-panel="shopping"><span>🛒</span>Shopping</button><button data-panel="pantry"><span>📦</span>Pantry</button></nav><div id="toast" class="toast"></div>
-<script>const DATA={"meals":{"meta":{"appName":"Josephine's Kitchen","nutritionDisclaimer":"Nutrition is a loose per-serving estimate. Actual values depend on portions, brands, sauces, and add-ins."},"tagGroups":{"effort":["No preparation","Very low","Low","Moderate","Cooking project"],"time":["Under 5 minutes","Under 15 minutes","Under 30 minutes","30–60 minutes","Over 1 hour","Mostly unattended"],"weather":["Hot weather","Warm weather","Cool weather","Cold weather","Any season"],"storage":["Freezes well","Refrigerates well","Best fresh","Good cold","Reheats well","Pantry-based","Uses freezer staples"],"use":["Batch cooking","Packed lunch","Weeknight dinner","Weekend project","Emergency meal","Grazing","Side or light meal","Good for guests"],"qualities":["High protein","High fiber","Vegetable-heavy","Bean-based","Tofu-based","Flexible protein","Uses leftover rice","Uses sourdough","Uses frozen vegetables","Good for using produce","Mostly pantry ingredients"],"frequency":["Frequent favorite","Regular option","Occasional reminder","Rare but enjoyable"]},"sections":[{"id":"main","name":"Main meals","items":[{"id":"bibimbap","name":"Bibimbap bowls","summary":"A composed rice bowl with several vegetables, protein, kimchi, and gochujang.","tags":["Moderate","30–60 minutes","Any season","Refrigerates well","Batch cooking","Packed lunch","Vegetable-heavy","Flexible protein","Frequent favorite"],"ingredients":{"required":["white rice or rice-lentil mix","gochujang sauce"],"chooseSeveral":{"vegetables":["broccoli","carrots","mushrooms","zucchini","cabbage","green beans","spinach","peas","corn","bell peppers","cucumbers","snow peas","bean sprouts","frozen vegetable mix","frozen stir-fry mix","kimchi"]},"chooseOne":{"protein":["tofu","eggs","chicken"]},"optional":["kimchi","sesame seeds","green onions","seaweed"]},"nutrition":{"serving":"1 large bowl","calories":[500,750],"protein":[20,35],"fiber":[7,13],"notes":"Higher with more rice or oil; add tofu, egg, or edamame for more protein."}},{"id":"tofu-bowl","name":"Everyday tofu bowl","summary":"Tofu, rice, vegetables, and a chosen sauce; the main flexible weeknight template.","tags":["Low","Under 30 minutes","Any season","Refrigerates well","Batch cooking","Packed lunch","Tofu-based","Uses frozen vegetables","Frequent favorite"],"ingredients":{"required":["tofu","white rice or rice-lentil mix"],"chooseSeveral":{"vegetables":["broccoli","carrots","mushrooms","zucchini","cabbage","green beans","spinach","peas","corn","bell peppers","cucumbers","snow peas","bean sprouts","frozen vegetable mix","frozen stir-fry mix"]},"chooseOne":{"sauce":["gochujang","teriyaki","peanut sesame","soy ginger","miso ginger","garlic sesame"]},"optional":["eggs","edamame","green onions","sesame seeds","kimchi"]},"nutrition":{"serving":"1 bowl","calories":[450,700],"protein":[20,35],"fiber":[7,13],"notes":"Peanut sauce and larger rice portions move this toward the upper end."}},{"id":"japanese-curry","name":"Japanese curry","summary":"Mild, thick curry with vegetables and rice; useful as an occasional comfort meal.","tags":["Low","30–60 minutes","Cool weather","Cold weather","Refrigerates well","Reheats well","Batch cooking","Flexible protein","Occasional reminder"],"ingredients":{"required":["Japanese curry roux","white rice","onions","carrots"],"chooseOne":{"protein":["tofu","chicken","no added protein"]},"optional":["thin-sliced potatoes","mushrooms","peas","cauliflower"]},"nutrition":{"serving":"1 bowl with rice","calories":[500,750],"protein":[12,30],"fiber":[5,10],"notes":"Protein varies most with tofu or chicken."}},{"id":"fried-rice","name":"Fried rice","summary":"A flexible use-up meal built around leftover rice, vegetables, and protein.","tags":["Low","Under 30 minutes","Any season","Refrigerates well","Weeknight dinner","Uses leftover rice","Good for using produce","Flexible protein","Regular option"],"ingredients":{"required":["cold cooked rice","soy sauce","sesame oil"],"chooseSeveral":{"vegetables":["peas","carrots","corn","mushrooms","cabbage","green onions","broccoli","green beans","bell peppers","snow peas","bean sprouts","frozen vegetable mix","frozen stir-fry mix","kimchi"]},"chooseOne":{"protein":["tofu","eggs","both tofu and eggs"]},"optional":["gochujang","seaweed","sesame seeds"]},"nutrition":{"serving":"1 generous bowl","calories":[450,700],"protein":[18,32],"fiber":[5,10],"notes":"Kimchi fried rice is a built-in variation."}},{"id":"tikka","name":"Tikka masala / butter chicken-style curry","summary":"Tomato-rich Indian curry with cauliflower and either tofu or chicken.","tags":["Moderate","30–60 minutes","Any season","Refrigerates well","Freezes well","Batch cooking","Flexible protein","Frequent favorite"],"ingredients":{"required":["tomato sauce or crushed tomatoes","onions","garlic","ginger","Indian spices","white rice"],"chooseOne":{"protein":["tofu","chicken"]},"chooseSeveral":{"vegetables":["cauliflower","peas","spinach"]},"optional":["cream","Greek yogurt","butter","cilantro"]},"nutrition":{"serving":"1 bowl with rice","calories":[550,850],"protein":[22,40],"fiber":[6,12],"notes":"Cream and butter raise calories; tofu or chicken keeps protein substantial."}},{"id":"korma","name":"Korma","summary":"Creamy, aromatic curry with cauliflower and flexible protein.","tags":["Moderate","30–60 minutes","Any season","Refrigerates well","Freezes well","Batch cooking","Flexible protein","Regular option"],"ingredients":{"required":["onions","garlic","ginger","korma spices or paste","white rice"],"chooseOne":{"protein":["tofu","chicken"]},"chooseSeveral":{"vegetables":["cauliflower","peas","spinach","carrots"]},"optional":["yogurt","cream","coconut milk","nuts"]},"nutrition":{"serving":"1 bowl with rice","calories":[550,850],"protein":[20,38],"fiber":[6,11],"notes":"Nuts, cream, and coconut milk increase the upper range."}},{"id":"red-lentil-curry","name":"Red lentil coconut curry","summary":"A pantry-friendly, high-fiber curry with lentils, coconut milk, and vegetables.","tags":["Low","30–60 minutes","Cool weather","Cold weather","Freezes well","Reheats well","Batch cooking","High fiber","Bean-based","Mostly pantry ingredients","Regular option"],"ingredients":{"required":["red lentils","coconut milk","onions","garlic","ginger","curry spices"],"chooseSeveral":{"vegetables":["cauliflower","spinach","carrots","tomatoes"]},"optional":["white rice","cilantro","limes"]},"nutrition":{"serving":"1 bowl, with optional rice","calories":[450,700],"protein":[17,25],"fiber":[12,20],"notes":"Rice and full-fat coconut milk move calories upward."}},{"id":"cowboy-caviar","name":"Cowboy caviar","summary":"A cold bean, corn, and vegetable mixture eaten plain or served with chips, tortillas, rice, or greens.","tags":["Very low","Under 30 minutes","Hot weather","Warm weather","Good cold","Refrigerates well","Batch cooking","Packed lunch","High fiber","Bean-based","Vegetable-heavy","Frequent favorite"],"ingredients":{"required":["black beans","another preferred bean","corn","limes"],"chooseSeveral":{"vegetables":["tomatoes","cucumbers","bell peppers","red onions","jalapeños","avocados","cilantro","green onions"]},"chooseOne":{"serving":["plain (nothing extra)","with tortilla chips","in tortillas","over rice","over greens"]},"optional":["cottage cheese"]},"nutrition":{"serving":"1 meal-size portion, depending on serving style","calories":[350,700],"protein":[14,25],"fiber":[12,20],"notes":"Chips, tortillas, avocado, and cottage cheese create most of the range."}},{"id":"nachos","name":"Loaded nachos","summary":"Nachos with beans, spinach, vegetables, salsa, sour cream, and other chosen toppings.","tags":["Low","Under 30 minutes","Any season","Weeknight dinner","Bean-based","Vegetable-heavy","Flexible protein","Frequent favorite"],"ingredients":{"required":["tortilla chips"],"chooseOne":{"beans":["black beans","pinto beans","refried beans"]},"chooseSeveral":{"vegetables":["spinach","tomatoes","cilantro","onions","bell peppers","avocados","jalapeños","corn","mushrooms","zucchini","frozen vegetable mix"],"toppings":["sour cream","salsa","cottage cheese","cheese"]},"optional":["limes","green onions","chili crunch"]},"nutrition":{"serving":"1 loaded plate","calories":[500,900],"protein":[18,35],"fiber":[10,20],"notes":"Beans, vegetables, cheese, sour cream, and portion size create most of the range."}},{"id":"zucchini-pancakes","name":"Zucchini pancakes","summary":"Savory zucchini pancakes with sour cream or yogurt.","tags":["Moderate","30–60 minutes","Warm weather","Best fresh","Weeknight dinner","Vegetable-heavy","Regular option"],"ingredients":{"required":["zucchini","eggs","flour","salt"],"optional":["green onions","garlic","sour cream","Greek yogurt","herbs"]},"nutrition":{"serving":"Meal-size portion with topping","calories":[350,600],"protein":[12,22],"fiber":[4,8],"notes":"Oil absorption and topping amount affect calories substantially."}},{"id":"shepherds-pie","name":"Vegetarian shepherd's pie","summary":"Savory lentil, mushroom, and vegetable filling topped with mashed potatoes.","tags":["Cooking project","Over 1 hour","Cold weather","Freezes well","Reheats well","Batch cooking","Weekend project","High fiber","Vegetable-heavy","Frequent favorite"],"ingredients":{"required":["lentils","mushrooms","onions","carrots","peas","potatoes"],"optional":["vegetable broth","tomato paste","Worcestershire-style sauce","cheese","herbs"]},"nutrition":{"serving":"1 substantial square","calories":[450,700],"protein":[16,25],"fiber":[10,17],"notes":"Butter, cheese, and portion size drive the upper end."}},{"id":"pot-pie","name":"Vegetable pot pie","summary":"Creamy vegetable filling under puff pastry, pie crust, or biscuits.","tags":["Cooking project","Over 1 hour","Cold weather","Refrigerates well","Reheats well","Weekend project","Vegetable-heavy","Frequent favorite"],"ingredients":{"required":["mixed vegetables","onions","creamy sauce or gravy","puff pastry, crust, or biscuits"],"chooseOne":{"protein":["white beans","tofu","chicken","no added protein"]},"optional":["mushrooms","peas","carrots","celery","herbs"]},"nutrition":{"serving":"1 large portion","calories":[500,800],"protein":[12,30],"fiber":[6,12],"notes":"Pastry and protein choice create most of the range."}},{"id":"enchiladas","name":"Enchiladas","summary":"An occasional reminder meal for when a baked, saucy tortilla dish sounds good.","tags":["Moderate","30–60 minutes","Any season","Refrigerates well","Reheats well","Batch cooking","Occasional reminder"],"ingredients":{"required":["tortillas","enchilada sauce","cheese"],"chooseOne":{"filling":["beans and vegetables","tofu","chicken"]},"optional":["corn","peppers","onions","Greek yogurt","avocados"]},"nutrition":{"serving":"2–3 enchiladas","calories":[500,850],"protein":[18,35],"fiber":[6,14],"notes":"Cheese, tortilla size, and filling determine most of the range."}},{"id":"summer-rolls","name":"Summer rolls","summary":"Fresh rice-paper rolls with vegetables and tofu, shrimp, avocado, or a combination.","tags":["Moderate","30–60 minutes","Hot weather","Warm weather","Best fresh","Vegetable-heavy","Flexible protein","Occasional reminder"],"ingredients":{"required":["rice paper wrappers","cucumbers","carrots","lettuce"],"chooseSeveral":{"fillings":["lettuce","tofu","shrimp","avocados"],"greens and herbs":["lettuce","cabbage","cilantro","mint","basil","green onions"]},"optional":["rice noodles","bell peppers","bean sprouts","hoisin sauce","peanut sauce","limes"]},"nutrition":{"serving":"3–5 rolls with dipping sauce","calories":[350,700],"protein":[12,35],"fiber":[5,12],"notes":"Protein choice, avocado, noodles, and dipping sauce create most of the range."}},{"id":"teriyaki-salmon","name":"Teriyaki salmon","summary":"Salmon with teriyaki sauce, rice, and a flexible vegetable side.","tags":["Low","Under 30 minutes","Any season","Best fresh","Weeknight dinner","High protein","Occasional reminder"],"ingredients":{"required":["salmon","teriyaki sauce","white rice"],"chooseSeveral":{"vegetables":["broccoli","green beans","bok choy","cabbage","carrots","edamame","frozen mixed vegetables"]},"optional":["green onions","sesame seeds","ginger","limes"]},"nutrition":{"serving":"1 salmon fillet with rice and vegetables","calories":[500,800],"protein":[30,45],"fiber":[4,10],"notes":"Rice portion, salmon size, and sauce amount create most of the range."}},{"id":"burrito-bowls","name":"Burrito bowls","summary":"Rice-and-bean bowls with vegetables, salsa, and flexible toppings.","tags":["Low","Under 30 minutes","Any season","Packed lunch","Bean-based","Flexible protein","Regular option"],"ingredients":{"required":["white rice","black beans"],"chooseSeveral":{"toppings":["lettuce","tomatoes","avocados","corn","cheese","salsa","Greek yogurt","cilantro","limes"]},"optional":["tofu","eggs"]}},{"id":"saag-paneer","name":"Saag paneer with naan","summary":"Creamy spiced spinach with paneer, ideally served with homemade naan.","tags":["Moderate","30–60 minutes","Cool weather","Weekend project","Vegetable-heavy","Occasional reminder"],"ingredients":{"required":["spinach","paneer","onions","garlic","ginger","garam masala"],"optional":["Greek yogurt","cream","homemade naan"]}},{"id":"aloo-gobi","name":"Aloo gobi with naan","summary":"Spiced potatoes and cauliflower, often paired with homemade naan.","tags":["Moderate","30–60 minutes","Any season","Vegetable-heavy","Occasional reminder"],"ingredients":{"required":["potatoes","cauliflower","onions","garlic","ginger","garam masala"],"optional":["tomatoes","cilantro","homemade naan"]}},{"id":"pasta-salad","name":"Summer pasta salad","summary":"A cold pasta salad with cucumber, tomato, olives, and mood-dependent add-ins.","tags":["Low","Under 30 minutes","Hot weather","Good cold","Packed lunch","Good for using produce","Regular option"],"ingredients":{"required":["pasta","cucumbers","tomatoes","olives"],"chooseSeveral":{"add-ins":["feta","mozzarella","chickpeas","bell peppers","red onions","spinach","artichoke hearts"]},"optional":["Italian dressing","olive oil","vinegar"]}},{"id":"savory-crepes","name":"Savory crepes","summary":"Crepes filled at the table with arugula, ham, cheese, avocado, olives, mushrooms, or other toppings.","tags":["Moderate","30–60 minutes","Any season","Good for guests","Occasional reminder"],"ingredients":{"required":["flour","eggs","milk"],"chooseSeveral":{"fillings":["arugula","ham","cheese","avocados","olives","mushrooms"]},"optional":["butter"]}}]},{"id":"soups","name":"Soups & stews","items":[{"id":"white-bean-kale","name":"White bean kale stew","summary":"A favorite hearty white bean stew with greens and herbs.","tags":["Low","30–60 minutes","Cool weather","Cold weather","Freezes well","Reheats well","Batch cooking","High fiber","Bean-based","Good with sourdough","Frequent favorite"],"ingredients":{"required":["white beans","kale or another green","onions","garlic","broth"],"optional":["tomatoes","lemons","rosemary","Parmesan","sourdough"]},"nutrition":{"serving":"1 large bowl","calories":[350,600],"protein":[16,25],"fiber":[12,20],"notes":"Bread, cheese, and oil raise calories."}},{"id":"lentil-soup","name":"Lentil soup","summary":"A flexible everyday lentil soup: Mediterranean, tomato, lemon, or spinach.","tags":["Low","30–60 minutes","Cool weather","Cold weather","Freezes well","Pantry-based","High fiber","Bean-based","Regular option"],"ingredients":{"required":["lentils","onions","carrots","broth"],"optional":["tomatoes","spinach","lemons","herbs","sourdough"]},"nutrition":{"serving":"1 large bowl","calories":[300,550],"protein":[16,25],"fiber":[13,21],"notes":"Bread and oil account for much of the range."}},{"id":"black-bean-soup","name":"Black bean soup","summary":"Smoky or Southwest-style, blended or chunky.","tags":["Low","30–60 minutes","Cool weather","Cold weather","Freezes well","Pantry-based","High fiber","Bean-based","Regular option"],"ingredients":{"required":["black beans","onions","garlic","broth","spices"],"optional":["corn","tomatoes","limes","Greek yogurt","avocados","chips"]},"nutrition":{"serving":"1 large bowl","calories":[350,650],"protein":[17,27],"fiber":[14,22],"notes":"Toppings create most of the upper range."}},{"id":"split-pea","name":"Split pea soup","summary":"A mostly pantry-based, thick, comforting soup.","tags":["Low","Over 1 hour","Mostly unattended","Cold weather","Freezes well","Pantry-based","High fiber","Bean-based","Regular option"],"ingredients":{"required":["split peas","onions","carrots","broth"],"optional":["celery","smoked seasoning","sourdough"]},"nutrition":{"serving":"1 large bowl","calories":[300,550],"protein":[17,25],"fiber":[14,21],"notes":"Bread and added fat raise calories."}},{"id":"kimchi-stew","name":"Kimchi stew","summary":"Kimchi, tofu, mushrooms, and broth, usually with rice on the side.","tags":["Low","Under 30 minutes","Cool weather","Cold weather","Reheats well","Weeknight dinner","Tofu-based","Regular option"],"ingredients":{"required":["homemade kimchi","tofu","broth"],"optional":["mushrooms","onions","green onions","gochujang","white rice"]},"nutrition":{"serving":"1 bowl with optional rice","calories":[350,650],"protein":[18,30],"fiber":[5,10],"notes":"Rice and tofu amount create most of the range."}},{"id":"coconut-curry-soup","name":"Coconut curry soup","summary":"A flexible soup with coconut milk, curry paste, tofu, vegetables, and optional rice noodles.","tags":["Low","Under 30 minutes","Cool weather","Cold weather","Refrigerates well","Uses frozen vegetables","Tofu-based","Regular option"],"ingredients":{"required":["coconut milk","curry paste","broth"],"chooseOne":{"protein":["tofu","chicken"]},"chooseSeveral":{"vegetables":["mushrooms","broccoli","spinach","carrots","frozen vegetables"]},"optional":["rice noodles","limes","cilantro"]},"nutrition":{"serving":"1 large bowl","calories":[450,750],"protein":[18,35],"fiber":[5,11],"notes":"Noodles and full-fat coconut milk increase calories."}},{"id":"minestrone","name":"Minestrone","summary":"A vegetable-heavy clean-out-the-fridge soup with beans and pasta.","tags":["Low","30–60 minutes","Cool weather","Cold weather","Freezes well","Good for using produce","High fiber","Bean-based","Regular option"],"ingredients":{"required":["beans","tomatoes","broth","mixed vegetables"],"optional":["small pasta","greens","Parmesan","sourdough"]},"nutrition":{"serving":"1 large bowl","calories":[350,600],"protein":[15,24],"fiber":[10,18],"notes":"Pasta, cheese, and bread raise calories."}},{"id":"tomato-soup","name":"Tomato soup","summary":"Simple tomato soup, especially good with grilled cheese or sourdough.","tags":["Very low","Under 30 minutes","Cool weather","Cold weather","Refrigerates well","Side or light meal","Good with sourdough","Regular option"],"ingredients":{"required":["tomatoes or canned tomatoes","onions or garlic","broth"],"optional":["cream","Greek yogurt","grilled cheese","sourdough"]},"nutrition":{"serving":"Soup alone or with sandwich","calories":[200,700],"protein":[5,28],"fiber":[4,9],"notes":"The wide range accounts for grilled cheese or a substantial bread side."}},{"id":"miso-soup","name":"Miso soup","summary":"A quick side or light meal with tofu, seaweed, and optional noodles.","tags":["Very low","Under 15 minutes","Any season","Side or light meal","Tofu-based","Regular option"],"ingredients":{"required":["miso paste","broth or water"],"optional":["tofu","seaweed","green onions","mushrooms","noodles"]},"nutrition":{"serving":"1 bowl","calories":[80,350],"protein":[5,20],"fiber":[1,6],"notes":"Noodles and tofu turn this from a side into a light meal."}},{"id":"vegetable-soup","name":"Flexible vegetable soup","summary":"A general use-up soup for whatever vegetables are available.","tags":["Low","30–60 minutes","Cool weather","Cold weather","Freezes well","Good for using produce","Vegetable-heavy","Regular option"],"ingredients":{"required":["broth","onions","mixed vegetables"],"optional":["beans","lentils","pasta","rice","tomatoes","sourdough"]},"nutrition":{"serving":"1 large bowl","calories":[200,600],"protein":[6,25],"fiber":[5,16],"notes":"Beans, lentils, pasta, and bread determine whether this is light or substantial."}},{"id":"broccoli-cheddar","name":"Broccoli cheddar soup","summary":"A richer occasional comfort soup.","tags":["Moderate","30–60 minutes","Cold weather","Refrigerates well","Occasional reminder"],"ingredients":{"required":["broccoli","cheddar","milk or cream","broth"],"optional":["onions","carrots","sourdough"]},"nutrition":{"serving":"1 bowl","calories":[400,700],"protein":[18,28],"fiber":[5,9],"notes":"Cheese, cream, and bread create most of the range."}},{"id":"potato-leek","name":"Potato leek soup","summary":"An occasional smooth comfort soup despite potatoes not being a frequent choice.","tags":["Moderate","30–60 minutes","Cold weather","Refrigerates well","Occasional reminder"],"ingredients":{"required":["potatoes","leeks","broth"],"optional":["cream","butter","herbs","sourdough"]},"nutrition":{"serving":"1 bowl","calories":[300,600],"protein":[7,16],"fiber":[4,8],"notes":"Cream, butter, and bread raise calories."}}]},{"id":"emergency","name":"Emergency meals","items":[{"id":"fairlife","name":"Fairlife protein shakes","energy":"None","minutes":0,"stockRule":"Keep 4 total: 2 at home and 2 at work.","tags":["No preparation","Under 5 minutes","Emergency meal","High protein","Frequent favorite"],"ingredients":{"required":["Fairlife protein shakes"]},"nutrition":{"serving":"1 bottle","calories":[150,250],"protein":[26,42],"fiber":[0,2],"notes":"Depends on product line."}},{"id":"fish-crackers","name":"Crackers, canned fish, and homemade pickles","energy":"None","minutes":3,"tags":["No preparation","Under 5 minutes","Emergency meal","Grazing","High protein","Frequent favorite"],"ingredients":{"required":["crackers","canned fish","homemade pickles"]},"nutrition":{"serving":"1 assembled meal","calories":[350,650],"protein":[20,35],"fiber":[3,8],"notes":"Cracker portion and fish type create the range."}},{"id":"yogurt-bowl","name":"Greek yogurt bowl","energy":"None","minutes":3,"tags":["No preparation","Under 5 minutes","Emergency meal","High protein","Regular option"],"ingredients":{"required":["Greek yogurt"],"optional":["berries","chia seeds","honey","jam","granola"]},"nutrition":{"serving":"1 large bowl","calories":[250,500],"protein":[18,30],"fiber":[4,12],"notes":"Chia, fruit, granola, and sweetener affect the range."}},{"id":"pb-toast","name":"Peanut butter toast","energy":"None","minutes":4,"tags":["Very low","Under 5 minutes","Emergency meal","Regular option"],"ingredients":{"required":["bread","peanut butter"]},"nutrition":{"serving":"2 slices","calories":[350,550],"protein":[12,20],"fiber":[5,10],"notes":"Bread type and peanut butter amount matter most."}},{"id":"pickled-eggs-plate","name":"Pickled eggs, crackers, and vegetables","energy":"None","minutes":4,"tags":["No preparation","Under 5 minutes","Emergency meal","Grazing","High protein","Regular option"],"ingredients":{"required":["homemade pickled eggs","crackers"],"optional":["raw vegetables","cheese","fruit","seaweed"]},"nutrition":{"serving":"1 plate","calories":[300,600],"protein":[18,30],"fiber":[3,10],"notes":"Cheese, crackers, and number of eggs drive the range."}},{"id":"dumplings","name":"Frozen dumplings","energy":"Five minutes","minutes":10,"tags":["Very low","Under 15 minutes","Emergency meal","Uses freezer staples","Regular option"],"ingredients":{"required":["frozen dumplings"]},"nutrition":{"serving":"Meal-size portion","calories":[350,650],"protein":[12,25],"fiber":[3,8],"notes":"Brand and serving size vary widely."}},{"id":"eggs-toast","name":"Eggs and toast","energy":"Five minutes","minutes":10,"tags":["Very low","Under 15 minutes","Emergency meal","High protein","Frequent favorite"],"ingredients":{"required":["eggs","bread"],"optional":["homemade pickles","kimchi","cheese","fruit"]},"nutrition":{"serving":"2–3 eggs with toast","calories":[350,650],"protein":[20,32],"fiber":[3,9],"notes":"Bread, cheese, and cooking fat affect calories."}},{"id":"ramen","name":"Upgraded instant ramen","energy":"Five minutes","minutes":12,"tags":["Very low","Under 15 minutes","Emergency meal","Regular option"],"ingredients":{"required":["instant ramen"],"optional":["eggs","tofu","frozen vegetables","kimchi","seaweed"]},"nutrition":{"serving":"1 upgraded bowl","calories":[450,750],"protein":[15,30],"fiber":[3,10],"notes":"Protein and vegetable additions improve balance."}},{"id":"quesadilla","name":"Quesadilla","energy":"Fifteen minutes","minutes":12,"tags":["Very low","Under 15 minutes","Emergency meal","Regular option"],"ingredients":{"required":["tortillas","cheese"],"chooseSeveral":{"fillings":["black beans","avocados","mushrooms","spinach","jalapeños","onions"]},"optional":["salsa","Japanese mayonnaise"]},"nutrition":{"serving":"1 large quesadilla","calories":[450,750],"protein":[18,32],"fiber":[4,12],"notes":"Beans and vegetables raise fiber."},"summary":"A fast tortilla-and-cheese meal with flexible fillings such as black beans, avocado, mushrooms, or spinach."},{"id":"pasta-jar","name":"Pasta with jarred sauce","energy":"Fifteen minutes","minutes":15,"tags":["Very low","Under 15 minutes","Emergency meal","Mostly pantry ingredients","Regular option"],"ingredients":{"required":["pasta","jarred sauce"],"optional":["white beans","frozen vegetables","cheese"]},"nutrition":{"serving":"1 large bowl","calories":[500,800],"protein":[16,30],"fiber":[6,14],"notes":"Beans and vegetables improve protein and fiber."}},{"id":"grilled-cheese","name":"Grilled cheese and tomato soup","energy":"Fifteen minutes","minutes":15,"tags":["Low","Under 15 minutes","Emergency meal","Cold weather","Regular option"],"ingredients":{"required":["bread","cheese","tomato soup"],"optional":["butter"]},"nutrition":{"serving":"1 sandwich and soup","calories":[550,850],"protein":[20,32],"fiber":[5,10],"notes":"Cheese, butter, and bread size create most of the range."},"summary":"A comforting grilled cheese paired with tomato soup."}]},{"id":"grazing","name":"Grazing & snacks","items":[{"id":"grazing-template","name":"Generate a grazing plate","summary":"Choose 1–2 proteins, 1 crunch, 1 acidic item, 1 fruit or vegetable, and an optional extra.","tags":["No preparation","Under 5 minutes","Grazing","Flexible protein","Frequent favorite"],"generator":{"protein":["pickled eggs","canned tuna","sardines","cheese","Greek yogurt dips"],"crunch":["crackers","toast","cucumbers","carrots","bell peppers","seaweed snacks"],"acid":["homemade cucumber pickles","pickled carrots","pickled cauliflower","pickled red onion","pickled jalapeños","kimchi","olives"],"produce":["apples","grapes","clementine","berries","raw vegetables"],"extra":["mustard","jam","nuts","honey","hot sauce"]},"nutrition":{"serving":"1 generated plate","calories":[300,700],"protein":[15,35],"fiber":[4,12],"notes":"The generator favors balance, but portions remain flexible."}},{"id":"portable-snacks","name":"Portable work snacks","summary":"Quick items that can go in a bag or office fridge.","tags":["No preparation","Under 5 minutes","Packed lunch","Regular option"],"ingredients":{"chooseSeveral":{"options":["Fairlife shakes","apples","bananas","clementines","Greek yogurt","trail mix","crackers","cheese sticks","seaweed snacks","peanut butter crackers","roasted chickpeas"]}},"nutrition":{"serving":"1–2 snacks","calories":[100,450],"protein":[2,30],"fiber":[1,10],"notes":"Choose a protein-forward option when the snack needs to carry a meal gap."}},{"id":"cottage-cheese-snack","name":"Cottage cheese snack","summary":"Cottage cheese with chili crunch and honey.","tags":["No preparation","Under 5 minutes","Grazing","High protein","Regular option"],"ingredients":{"required":["cottage cheese"],"optional":["chili crunch","honey"]},"nutrition":{"serving":"1 snack bowl","calories":[180,350],"protein":[20,30],"fiber":[0,2],"notes":"Honey and chili crunch affect the upper end."}}]},{"id":"dessert","name":"Dessert","items":[{"id":"yogurt-dessert","name":"Yogurt dessert","summary":"Yogurt with chia seeds and either frozen fruit or banana.","tags":["No preparation","Under 5 minutes","Any season","High protein","High fiber","Frequent favorite"],"ingredients":{"required":["yogurt","chia seeds"],"chooseOne":{"fruit":["frozen fruit","bananas"]}},"nutrition":{"serving":"1 dessert bowl","calories":[220,450],"protein":[17,28],"fiber":[6,13],"notes":"Fruit amount and yogurt type create most of the range."}},{"id":"fruit","name":"Fruit dessert","summary":"Fresh berries, frozen grapes, fruit salad, or baked fruit.","tags":["No preparation","Under 15 minutes","Any season","Regular option"],"ingredients":{"chooseOne":{"fruit":["fresh berries","frozen grapes","fruit salad","baked apples"]},"optional":["Greek yogurt","cinnamon","honey"]},"nutrition":{"serving":"1 serving","calories":[80,300],"protein":[1,18],"fiber":[3,9],"notes":"Greek yogurt raises protein."}},{"id":"crisp","name":"Apple crisp or berry crumble","summary":"A warm occasional dessert.","tags":["Moderate","30–60 minutes","Cool weather","Cold weather","Good for guests","Occasional reminder"],"ingredients":{"required":["fruit","oats or crumble topping","sugar","butter"],"optional":["Greek yogurt","ice cream"]},"nutrition":{"serving":"1 portion","calories":[300,600],"protein":[3,12],"fiber":[4,9],"notes":"Topping size and ice cream create most of the range."}},{"id":"sweet-treat","name":"Sweet treat on hand","summary":"Dark chocolate, cookies, or ice cream when that is what sounds good.","tags":["No preparation","Under 5 minutes","Any season","Regular option"],"ingredients":{"chooseOne":{"treat":["dark chocolate","cookies","ice cream"]}},"nutrition":{"serving":"1 chosen portion","calories":[120,450],"protein":[1,8],"fiber":[0,5],"notes":"Use the package serving as the most accurate reference."}},{"id":"rice-krispie-treats","name":"Rice Krispie treats","summary":"A simple marshmallow cereal treat.","tags":["Low","Under 30 minutes","Any season","Occasional reminder"],"ingredients":{"required":["crispy rice cereal","marshmallows","butter"]}},{"id":"nutella-banana-crepes","name":"Nutella banana crepes","summary":"Dessert crepes with Nutella and sliced banana.","tags":["Moderate","30–60 minutes","Any season","Occasional reminder"],"ingredients":{"required":["flour","eggs","milk","Nutella","bananas"],"optional":["butter","powdered sugar"]}}]},{"id":"prep","name":"Meal prep & baking","items":[{"id":"banana-choc-bread","name":"Chocolate chip banana bread or muffins","summary":"Banana bread or muffins with chocolate chips and chia seeds for easy workday prep.","tags":["Moderate","Mostly unattended","Any season","Refrigerates well","Packed lunch","Regular option"],"ingredients":{"required":["bananas","flour","eggs","butter","chocolate chips","chia seeds"],"optional":["Greek yogurt","cinnamon"]}},{"id":"blueberry-muffins","name":"Blueberry yogurt chia muffins","summary":"Blueberry muffins enriched with Greek yogurt and chia seeds for packed breakfasts.","tags":["Moderate","Mostly unattended","Any season","Refrigerates well","Packed lunch","Regular option"],"ingredients":{"required":["blueberries","flour","eggs","Greek yogurt","chia seeds"],"optional":["butter","milk","vanilla extract"]}}]},{"id":"snacks-sides","name":"Snacks & sides","items":[{"id":"crosshatched-potatoes","name":"Cross-hatched spiced potatoes","summary":"Thin cross-hatched potato slices baked until crisp and eaten with ketchup and Japanese mayonnaise. Mostly hands-off baking time.","tags":["Low","Mostly unattended","Any season","Side or light meal","Regular option"],"ingredients":{"required":["potatoes","neutral oil","ketchup","Japanese mayonnaise"],"optional":["smoked paprika","garlic powder","onion powder","salt","pepper"]}},{"id":"popcorn","name":"Popcorn","summary":"A quick salty snack to keep around.","tags":["Very low","Under 15 minutes","Any season","Pantry-based","Regular option"],"ingredients":{"required":["popcorn kernels"],"optional":["butter","salt"]}},{"id":"trail-mix","name":"Trail mix","summary":"An uncommon but useful shelf-stable quick bite.","tags":["No preparation","Under 5 minutes","Any season","Pantry-based","Rare but enjoyable"],"ingredients":{"required":["trail mix"]}}]}]},"pantry":{"alwaysStocked":{"Pantry":["white rice","lentils","black beans","white beans","red lentils","split peas","peanut butter","vinegar","coconut milk","curry paste","gochujang","pasta","crackers","canned fish","instant ramen","chia seeds","instant oatmeal","lemonade powder","Trader Joe's matcha latte mix","instant coffee","rice noodles","rice paper wrappers","furikake","nori","cocoa powder","chocolate chips","powdered sugar","low-sugar gelatin mixes","popcorn kernels","trail mix","tea","sparkling water","hot chocolate mix","apple cider packets"],"Freezer":["frozen broccoli","frozen mixed vegetables","edamame","frozen dumplings","frozen hash browns","frozen spinach","frozen fruit","frozen shrimp"],"Fridge":["eggs","tofu","cheese","yogurt","cottage cheese","milk","relish","Japanese mayonnaise","salsa","BBQ sauce"],"Produce basics":["onions","garlic","ginger","green onions","fruit","lettuce","celery","potatoes","cucumbers","tomatoes","avocados","cilantro","lemons","limes"]},"minimumStock":[{"item":"Fairlife protein shakes","minimum":4,"locations":{"home":2,"work":2},"shoppingNote":"Consider ordering a larger case online when the price per bottle is better."}],"homemadeStaples":[{"id":"kimchi","name":"Kimchi","container":"Large kimchi tub","statuses":["Plenty available","Running low","Need to make"],"ingredients":["Napa cabbages","salt","flour","sugar","daikons","carrots","green onions","garlic","ginger","onions","fish sauce","fermented shrimp","gochujang","gochugaru"]},{"id":"pickles","name":"Mixed pickles","container":"Large pickle tub","statuses":["Plenty available","Running low","Need to make"],"frequent":["cucumbers","carrots","red onions","jalapeños","cauliflower","eggs"],"occasional":["radishes","daikons (Korean-style or kimchied)"],"supplies":["vinegar","salt","sugar","garlic","dill","mustard seeds","peppercorns","red pepper flakes"]}],"weekDefaults":{"mainMeals":2,"soups":1,"emergencyOptions":2,"grazingSetups":1,"portableSnacks":2,"desserts":1},"spicesFlavorings":{"Salt, Baking & Staples":["kosher salt","white sugar","brown sugar","flour","cornstarch","baking powder","baking soda","vanilla extract","yeast"],"Herbs & Spices":["oregano","basil","thyme","rosemary","sage","dried parsley","dill","smoked paprika","garlic powder","onion powder","cumin","coriander","turmeric","cayenne","chili powder","red pepper flakes","cinnamon","nutmeg","ground ginger"],"Asian & Curry":["gochugaru","garam masala","curry powder"],"Umami & Broth":["Better Than Bouillon","stock cubes","Trader Joe's mushroom umami seasoning","MSG"],"Oils & Vinegars":["olive oil","neutral oil","sesame oil","rice vinegar","white vinegar","apple cider vinegar"],"Condiments":["soy sauce","fish sauce","honey","ketchup","chili crunch","mustard","hoisin sauce","Japanese mayonnaise","salsa","BBQ sauce"]},"householdPet":{"Household":["dish soap","dishwasher detergent","Clorox wipes","toilet paper","laundry detergent","trash bags","cleaning spray","sponges"],"Personal Care":["hand soap","shampoo","conditioner","body wash or bar soap","toothpaste","deodorant"],"Pet Supplies":["cat food","cat treats"]},"rememberedItems":[]}};
+<script>
+// RECIPE AND PANTRY DATA: search for a recipe name below to edit its ingredients.
+const DATA={
+  "meals": {
+    "meta": {
+      "appName": "Josephine's Kitchen",
+      "nutritionDisclaimer": "Nutrition is a loose per-serving estimate. Actual values depend on portions, brands, sauces, and add-ins."
+    },
+    "tagGroups": {
+      "effort": [
+        "No preparation",
+        "Very low",
+        "Low",
+        "Moderate",
+        "Cooking project"
+      ],
+      "time": [
+        "Under 5 minutes",
+        "Under 15 minutes",
+        "Under 30 minutes",
+        "30–60 minutes",
+        "Over 1 hour",
+        "Mostly unattended"
+      ],
+      "weather": [
+        "Hot weather",
+        "Warm weather",
+        "Cool weather",
+        "Cold weather",
+        "Any season"
+      ],
+      "storage": [
+        "Freezes well",
+        "Refrigerates well",
+        "Best fresh",
+        "Good cold",
+        "Reheats well",
+        "Pantry-based",
+        "Uses freezer staples"
+      ],
+      "use": [
+        "Batch cooking",
+        "Packed lunch",
+        "Weeknight dinner",
+        "Weekend project",
+        "Emergency meal",
+        "Grazing",
+        "Side or light meal",
+        "Good for guests"
+      ],
+      "qualities": [
+        "High protein",
+        "High fiber",
+        "Vegetable-heavy",
+        "Bean-based",
+        "Tofu-based",
+        "Flexible protein",
+        "Uses leftover rice",
+        "Uses sourdough",
+        "Uses frozen vegetables",
+        "Good for using produce",
+        "Mostly pantry ingredients"
+      ],
+      "frequency": [
+        "Frequent favorite",
+        "Regular option",
+        "Occasional reminder",
+        "Rare but enjoyable"
+      ]
+    },
+    "sections": [
+      {
+        "id": "main",
+        "name": "Main meals",
+        "items": [
+          {
+            "id": "bibimbap",
+            "name": "Bibimbap bowls",
+            "summary": "A composed rice bowl with several vegetables, protein, kimchi, and gochujang.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Any season",
+              "Refrigerates well",
+              "Batch cooking",
+              "Packed lunch",
+              "Vegetable-heavy",
+              "Flexible protein",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "white rice or rice-lentil mix",
+                "gochujang"
+              ],
+              "chooseSeveral": {
+                "vegetables": [
+                  "broccoli",
+                  "carrots",
+                  "mushrooms",
+                  "zucchini",
+                  "cabbage",
+                  "green beans",
+                  "spinach",
+                  "peas",
+                  "corn",
+                  "bell peppers",
+                  "cucumbers",
+                  "snow peas",
+                  "bean sprouts",
+                  "frozen vegetable mix",
+                  "frozen stir-fry mix",
+                  "kimchi"
+                ]
+              },
+              "chooseOne": {
+                "protein": [
+                  "tofu",
+                  "eggs",
+                  "chicken"
+                ]
+              },
+              "optional": [
+                "kimchi",
+                "sesame seeds",
+                "green onions",
+                "seaweed"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                500,
+                750
+              ],
+              "protein": [
+                20,
+                35
+              ],
+              "fiber": [
+                7,
+                13
+              ],
+              "notes": "Higher with more rice or oil; add tofu, egg, or edamame for more protein."
+            }
+          },
+          {
+            "id": "tofu-bowl",
+            "name": "Everyday tofu bowl",
+            "summary": "Tofu, rice, vegetables, and a chosen sauce; the main flexible weeknight template.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Any season",
+              "Refrigerates well",
+              "Batch cooking",
+              "Packed lunch",
+              "Tofu-based",
+              "Uses frozen vegetables",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "tofu",
+                "white rice or rice-lentil mix"
+              ],
+              "chooseSeveral": {
+                "vegetables": [
+                  "broccoli",
+                  "carrots",
+                  "mushrooms",
+                  "zucchini",
+                  "cabbage",
+                  "green beans",
+                  "spinach",
+                  "peas",
+                  "corn",
+                  "bell peppers",
+                  "cucumbers",
+                  "snow peas",
+                  "bean sprouts",
+                  "frozen vegetable mix",
+                  "frozen stir-fry mix"
+                ]
+              },
+              "chooseOne": {
+                "sauce": [
+                  "gochujang",
+                  "teriyaki",
+                  "peanut sesame",
+                  "soy ginger",
+                  "miso ginger",
+                  "garlic sesame"
+                ]
+              },
+              "optional": [
+                "eggs",
+                "edamame",
+                "green onions",
+                "sesame seeds",
+                "kimchi"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl",
+              "calories": [
+                450,
+                700
+              ],
+              "protein": [
+                20,
+                35
+              ],
+              "fiber": [
+                7,
+                13
+              ],
+              "notes": "Peanut sauce and larger rice portions move this toward the upper end."
+            }
+          },
+          {
+            "id": "japanese-curry",
+            "name": "Japanese curry",
+            "summary": "Mild, thick curry with vegetables and rice; useful as an occasional comfort meal.",
+            "tags": [
+              "Low",
+              "30–60 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Refrigerates well",
+              "Reheats well",
+              "Batch cooking",
+              "Flexible protein",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "Japanese curry roux",
+                "white rice",
+                "onions",
+                "carrots"
+              ],
+              "chooseOne": {
+                "protein": [
+                  "tofu",
+                  "chicken",
+                  "no added protein"
+                ]
+              },
+              "optional": [
+                "thin-sliced potatoes",
+                "mushrooms",
+                "peas",
+                "cauliflower"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl with rice",
+              "calories": [
+                500,
+                750
+              ],
+              "protein": [
+                12,
+                30
+              ],
+              "fiber": [
+                5,
+                10
+              ],
+              "notes": "Protein varies most with tofu or chicken."
+            }
+          },
+          {
+            "id": "fried-rice",
+            "name": "Fried rice",
+            "summary": "A flexible use-up meal built around leftover rice, vegetables, and protein.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Any season",
+              "Refrigerates well",
+              "Weeknight dinner",
+              "Uses leftover rice",
+              "Good for using produce",
+              "Flexible protein",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "cold cooked rice",
+                "soy sauce",
+                "sesame oil"
+              ],
+              "chooseSeveral": {
+                "vegetables": [
+                  "peas",
+                  "carrots",
+                  "corn",
+                  "mushrooms",
+                  "cabbage",
+                  "green onions",
+                  "broccoli",
+                  "green beans",
+                  "bell peppers",
+                  "snow peas",
+                  "bean sprouts",
+                  "frozen vegetable mix",
+                  "frozen stir-fry mix",
+                  "kimchi"
+                ]
+              },
+              "chooseOne": {
+                "protein": [
+                  "tofu",
+                  "eggs",
+                  "both tofu and eggs"
+                ]
+              },
+              "optional": [
+                "gochujang",
+                "seaweed",
+                "sesame seeds"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 generous bowl",
+              "calories": [
+                450,
+                700
+              ],
+              "protein": [
+                18,
+                32
+              ],
+              "fiber": [
+                5,
+                10
+              ],
+              "notes": "Kimchi fried rice is a built-in variation."
+            }
+          },
+          {
+            "id": "tikka",
+            "name": "Tikka masala / butter chicken-style curry",
+            "summary": "Tomato-rich Indian curry with cauliflower and either tofu or chicken.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Any season",
+              "Refrigerates well",
+              "Freezes well",
+              "Batch cooking",
+              "Flexible protein",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "tomato sauce or crushed tomatoes",
+                "onions",
+                "garlic",
+                "ginger",
+                "Indian spices",
+                "white rice"
+              ],
+              "chooseOne": {
+                "protein": [
+                  "tofu",
+                  "chicken"
+                ]
+              },
+              "chooseSeveral": {
+                "vegetables": [
+                  "cauliflower",
+                  "peas",
+                  "spinach"
+                ]
+              },
+              "optional": [
+                "cream",
+                "Greek yogurt",
+                "butter",
+                "cilantro"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl with rice",
+              "calories": [
+                550,
+                850
+              ],
+              "protein": [
+                22,
+                40
+              ],
+              "fiber": [
+                6,
+                12
+              ],
+              "notes": "Cream and butter raise calories; tofu or chicken keeps protein substantial."
+            }
+          },
+          {
+            "id": "korma",
+            "name": "Korma",
+            "summary": "Creamy, aromatic curry with cauliflower and flexible protein.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Any season",
+              "Refrigerates well",
+              "Freezes well",
+              "Batch cooking",
+              "Flexible protein",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "onions",
+                "garlic",
+                "ginger",
+                "korma spices or paste",
+                "white rice"
+              ],
+              "chooseOne": {
+                "protein": [
+                  "tofu",
+                  "chicken"
+                ]
+              },
+              "chooseSeveral": {
+                "vegetables": [
+                  "cauliflower",
+                  "peas",
+                  "spinach",
+                  "carrots"
+                ]
+              },
+              "optional": [
+                "yogurt",
+                "cream",
+                "coconut milk",
+                "nuts"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl with rice",
+              "calories": [
+                550,
+                850
+              ],
+              "protein": [
+                20,
+                38
+              ],
+              "fiber": [
+                6,
+                11
+              ],
+              "notes": "Nuts, cream, and coconut milk increase the upper range."
+            }
+          },
+          {
+            "id": "red-lentil-curry",
+            "name": "Red lentil coconut curry",
+            "summary": "A pantry-friendly, high-fiber curry with lentils, coconut milk, and vegetables.",
+            "tags": [
+              "Low",
+              "30–60 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Freezes well",
+              "Reheats well",
+              "Batch cooking",
+              "High fiber",
+              "Bean-based",
+              "Mostly pantry ingredients",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "red lentils",
+                "coconut milk",
+                "onions",
+                "garlic",
+                "ginger",
+                "curry spices"
+              ],
+              "chooseSeveral": {
+                "vegetables": [
+                  "cauliflower",
+                  "spinach",
+                  "carrots",
+                  "tomatoes"
+                ]
+              },
+              "optional": [
+                "white rice",
+                "cilantro",
+                "limes"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl, with optional rice",
+              "calories": [
+                450,
+                700
+              ],
+              "protein": [
+                17,
+                25
+              ],
+              "fiber": [
+                12,
+                20
+              ],
+              "notes": "Rice and full-fat coconut milk move calories upward."
+            }
+          },
+          {
+            "id": "cowboy-caviar",
+            "name": "Cowboy caviar",
+            "summary": "A cold bean, corn, and vegetable mixture eaten plain or served with chips, tortillas, rice, or greens.",
+            "tags": [
+              "Very low",
+              "Under 30 minutes",
+              "Hot weather",
+              "Warm weather",
+              "Good cold",
+              "Refrigerates well",
+              "Batch cooking",
+              "Packed lunch",
+              "High fiber",
+              "Bean-based",
+              "Vegetable-heavy",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "black beans",
+                "another preferred bean",
+                "corn",
+                "limes"
+              ],
+              "chooseSeveral": {
+                "vegetables": [
+                  "tomatoes",
+                  "cucumbers",
+                  "bell peppers",
+                  "red onions",
+                  "jalapeños",
+                  "avocados",
+                  "cilantro",
+                  "green onions"
+                ]
+              },
+              "chooseOne": {
+                "serving": [
+                  "plain (nothing extra)",
+                  "with tortilla chips",
+                  "in tortillas",
+                  "over rice",
+                  "over greens"
+                ]
+              },
+              "optional": [
+                "cottage cheese"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 meal-size portion, depending on serving style",
+              "calories": [
+                350,
+                700
+              ],
+              "protein": [
+                14,
+                25
+              ],
+              "fiber": [
+                12,
+                20
+              ],
+              "notes": "Chips, tortillas, avocado, and cottage cheese create most of the range."
+            }
+          },
+          {
+            "id": "nachos",
+            "name": "Loaded nachos",
+            "summary": "Nachos with beans, spinach, vegetables, salsa, sour cream, and other chosen toppings.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Any season",
+              "Weeknight dinner",
+              "Bean-based",
+              "Vegetable-heavy",
+              "Flexible protein",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "tortilla chips"
+              ],
+              "chooseOne": {
+                "beans": [
+                  "black beans",
+                  "pinto beans",
+                  "refried beans"
+                ]
+              },
+              "chooseSeveral": {
+                "vegetables": [
+                  "spinach",
+                  "tomatoes",
+                  "cilantro",
+                  "onions",
+                  "bell peppers",
+                  "avocados",
+                  "jalapeños",
+                  "corn",
+                  "mushrooms",
+                  "zucchini",
+                  "frozen vegetable mix"
+                ],
+                "toppings": [
+                  "sour cream",
+                  "salsa",
+                  "cottage cheese",
+                  "cheese"
+                ]
+              },
+              "optional": [
+                "limes",
+                "green onions",
+                "chili crunch"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 loaded plate",
+              "calories": [
+                500,
+                900
+              ],
+              "protein": [
+                18,
+                35
+              ],
+              "fiber": [
+                10,
+                20
+              ],
+              "notes": "Beans, vegetables, cheese, sour cream, and portion size create most of the range."
+            }
+          },
+          {
+            "id": "zucchini-pancakes",
+            "name": "Zucchini pancakes",
+            "summary": "Savory zucchini pancakes with sour cream or yogurt.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Warm weather",
+              "Best fresh",
+              "Weeknight dinner",
+              "Vegetable-heavy",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "zucchini",
+                "eggs",
+                "flour",
+                "salt"
+              ],
+              "optional": [
+                "green onions",
+                "garlic",
+                "sour cream",
+                "Greek yogurt",
+                "herbs"
+              ]
+            },
+            "nutrition": {
+              "serving": "Meal-size portion with topping",
+              "calories": [
+                350,
+                600
+              ],
+              "protein": [
+                12,
+                22
+              ],
+              "fiber": [
+                4,
+                8
+              ],
+              "notes": "Oil absorption and topping amount affect calories substantially."
+            }
+          },
+          {
+            "id": "shepherds-pie",
+            "name": "Vegetarian shepherd's pie",
+            "summary": "Savory lentil, mushroom, and vegetable filling topped with mashed potatoes.",
+            "tags": [
+              "Cooking project",
+              "Over 1 hour",
+              "Cold weather",
+              "Freezes well",
+              "Reheats well",
+              "Batch cooking",
+              "Weekend project",
+              "High fiber",
+              "Vegetable-heavy",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "lentils",
+                "mushrooms",
+                "onions",
+                "carrots",
+                "peas",
+                "potatoes"
+              ],
+              "optional": [
+                "vegetable broth",
+                "tomato paste",
+                "Worcestershire-style sauce",
+                "cheese",
+                "herbs"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 substantial square",
+              "calories": [
+                450,
+                700
+              ],
+              "protein": [
+                16,
+                25
+              ],
+              "fiber": [
+                10,
+                17
+              ],
+              "notes": "Butter, cheese, and portion size drive the upper end."
+            }
+          },
+          {
+            "id": "pot-pie",
+            "name": "Vegetable pot pie",
+            "summary": "Creamy vegetable filling under puff pastry, pie crust, or biscuits.",
+            "tags": [
+              "Cooking project",
+              "Over 1 hour",
+              "Cold weather",
+              "Refrigerates well",
+              "Reheats well",
+              "Weekend project",
+              "Vegetable-heavy",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "mixed vegetables",
+                "onions",
+                "creamy sauce or gravy",
+                "puff pastry, crust, or biscuits"
+              ],
+              "chooseOne": {
+                "protein": [
+                  "white beans",
+                  "tofu",
+                  "chicken",
+                  "no added protein"
+                ]
+              },
+              "optional": [
+                "mushrooms",
+                "peas",
+                "carrots",
+                "celery",
+                "herbs"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large portion",
+              "calories": [
+                500,
+                800
+              ],
+              "protein": [
+                12,
+                30
+              ],
+              "fiber": [
+                6,
+                12
+              ],
+              "notes": "Pastry and protein choice create most of the range."
+            }
+          },
+          {
+            "id": "enchiladas",
+            "name": "Enchiladas",
+            "summary": "An occasional reminder meal for when a baked, saucy tortilla dish sounds good.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Any season",
+              "Refrigerates well",
+              "Reheats well",
+              "Batch cooking",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "tortillas",
+                "enchilada sauce",
+                "cheese"
+              ],
+              "chooseOne": {
+                "filling": [
+                  "beans and vegetables",
+                  "tofu",
+                  "chicken"
+                ]
+              },
+              "optional": [
+                "corn",
+                "peppers",
+                "onions",
+                "Greek yogurt",
+                "avocados"
+              ]
+            },
+            "nutrition": {
+              "serving": "2–3 enchiladas",
+              "calories": [
+                500,
+                850
+              ],
+              "protein": [
+                18,
+                35
+              ],
+              "fiber": [
+                6,
+                14
+              ],
+              "notes": "Cheese, tortilla size, and filling determine most of the range."
+            }
+          },
+          {
+            "id": "summer-rolls",
+            "name": "Summer rolls",
+            "summary": "Fresh rice-paper rolls with vegetables and tofu, shrimp, avocado, or a combination.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Hot weather",
+              "Warm weather",
+              "Best fresh",
+              "Vegetable-heavy",
+              "Flexible protein",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "rice paper wrappers",
+                "cucumbers",
+                "carrots",
+                "lettuce"
+              ],
+              "chooseSeveral": {
+                "fillings": [
+                  "lettuce",
+                  "tofu",
+                  "shrimp",
+                  "avocados"
+                ],
+                "greens and herbs": [
+                  "lettuce",
+                  "cabbage",
+                  "cilantro",
+                  "mint",
+                  "basil",
+                  "green onions"
+                ]
+              },
+              "optional": [
+                "rice noodles",
+                "bell peppers",
+                "bean sprouts",
+                "hoisin sauce",
+                "peanut sauce",
+                "limes"
+              ]
+            },
+            "nutrition": {
+              "serving": "3–5 rolls with dipping sauce",
+              "calories": [
+                350,
+                700
+              ],
+              "protein": [
+                12,
+                35
+              ],
+              "fiber": [
+                5,
+                12
+              ],
+              "notes": "Protein choice, avocado, noodles, and dipping sauce create most of the range."
+            }
+          },
+          {
+            "id": "teriyaki-salmon",
+            "name": "Teriyaki salmon",
+            "summary": "Salmon with teriyaki sauce, rice, and a flexible vegetable side.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Any season",
+              "Best fresh",
+              "Weeknight dinner",
+              "High protein",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "salmon",
+                "teriyaki sauce",
+                "white rice"
+              ],
+              "chooseSeveral": {
+                "vegetables": [
+                  "broccoli",
+                  "green beans",
+                  "bok choy",
+                  "cabbage",
+                  "carrots",
+                  "edamame",
+                  "frozen mixed vegetables"
+                ]
+              },
+              "optional": [
+                "green onions",
+                "sesame seeds",
+                "ginger",
+                "limes"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 salmon fillet with rice and vegetables",
+              "calories": [
+                500,
+                800
+              ],
+              "protein": [
+                30,
+                45
+              ],
+              "fiber": [
+                4,
+                10
+              ],
+              "notes": "Rice portion, salmon size, and sauce amount create most of the range."
+            }
+          },
+          {
+            "id": "burrito-bowls",
+            "name": "Burrito bowls",
+            "summary": "Rice-and-bean bowls with vegetables, salsa, and flexible toppings.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Any season",
+              "Packed lunch",
+              "Bean-based",
+              "Flexible protein",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "white rice",
+                "black beans"
+              ],
+              "chooseSeveral": {
+                "toppings": [
+                  "lettuce",
+                  "tomatoes",
+                  "avocados",
+                  "corn",
+                  "cheese",
+                  "salsa",
+                  "Greek yogurt",
+                  "cilantro",
+                  "limes"
+                ]
+              },
+              "optional": [
+                "tofu",
+                "eggs"
+              ]
+            }
+          },
+          {
+            "id": "saag-paneer",
+            "name": "Saag paneer with naan",
+            "summary": "Creamy spiced spinach with paneer, ideally served with homemade naan.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Cool weather",
+              "Weekend project",
+              "Vegetable-heavy",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "spinach",
+                "paneer",
+                "onions",
+                "garlic",
+                "ginger",
+                "garam masala"
+              ],
+              "optional": [
+                "Greek yogurt",
+                "cream",
+                "homemade naan"
+              ]
+            }
+          },
+          {
+            "id": "aloo-gobi",
+            "name": "Aloo gobi with naan",
+            "summary": "Spiced potatoes and cauliflower, often paired with homemade naan.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Any season",
+              "Vegetable-heavy",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "potatoes",
+                "cauliflower",
+                "onions",
+                "garlic",
+                "ginger",
+                "garam masala"
+              ],
+              "optional": [
+                "tomatoes",
+                "cilantro",
+                "homemade naan"
+              ]
+            }
+          },
+          {
+            "id": "pasta-salad",
+            "name": "Summer pasta salad",
+            "summary": "A cold pasta salad with cucumber, tomato, olives, and mood-dependent add-ins.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Hot weather",
+              "Good cold",
+              "Packed lunch",
+              "Good for using produce",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "pasta",
+                "cucumbers",
+                "tomatoes",
+                "olives"
+              ],
+              "chooseSeveral": {
+                "add-ins": [
+                  "feta",
+                  "mozzarella",
+                  "chickpeas",
+                  "bell peppers",
+                  "red onions",
+                  "spinach",
+                  "artichoke hearts"
+                ]
+              },
+              "optional": [
+                "Italian dressing",
+                "olive oil",
+                "vinegar"
+              ]
+            }
+          },
+          {
+            "id": "savory-crepes",
+            "name": "Savory crepes",
+            "summary": "Crepes filled at the table with arugula, ham, cheese, avocado, olives, mushrooms, or other toppings.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Any season",
+              "Good for guests",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "flour",
+                "eggs",
+                "milk",
+                "butter"
+              ],
+              "chooseSeveral": {
+                "fillings": [
+                  "arugula",
+                  "ham",
+                  "cheese",
+                  "avocados",
+                  "olives",
+                  "mushrooms"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "soups",
+        "name": "Soups & stews",
+        "items": [
+          {
+            "id": "white-bean-kale",
+            "name": "White bean kale stew",
+            "summary": "A favorite hearty white bean stew with greens and herbs.",
+            "tags": [
+              "Low",
+              "30–60 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Freezes well",
+              "Reheats well",
+              "Batch cooking",
+              "High fiber",
+              "Bean-based",
+              "Good with sourdough",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "white beans",
+                "kale or another green",
+                "onions",
+                "garlic",
+                "broth"
+              ],
+              "optional": [
+                "tomatoes",
+                "lemons",
+                "rosemary",
+                "Parmesan",
+                "sourdough"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                350,
+                600
+              ],
+              "protein": [
+                16,
+                25
+              ],
+              "fiber": [
+                12,
+                20
+              ],
+              "notes": "Bread, cheese, and oil raise calories."
+            }
+          },
+          {
+            "id": "lentil-soup",
+            "name": "Lentil soup",
+            "summary": "A flexible everyday lentil soup: Mediterranean, tomato, lemon, or spinach.",
+            "tags": [
+              "Low",
+              "30–60 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Freezes well",
+              "Pantry-based",
+              "High fiber",
+              "Bean-based",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "lentils",
+                "onions",
+                "carrots",
+                "broth"
+              ],
+              "optional": [
+                "tomatoes",
+                "spinach",
+                "lemons",
+                "herbs",
+                "sourdough"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                300,
+                550
+              ],
+              "protein": [
+                16,
+                25
+              ],
+              "fiber": [
+                13,
+                21
+              ],
+              "notes": "Bread and oil account for much of the range."
+            }
+          },
+          {
+            "id": "black-bean-soup",
+            "name": "Black bean soup",
+            "summary": "Smoky or Southwest-style, blended or chunky.",
+            "tags": [
+              "Low",
+              "30–60 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Freezes well",
+              "Pantry-based",
+              "High fiber",
+              "Bean-based",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "black beans",
+                "onions",
+                "garlic",
+                "broth",
+                "spices"
+              ],
+              "optional": [
+                "corn",
+                "tomatoes",
+                "limes",
+                "Greek yogurt",
+                "avocados",
+                "chips"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                350,
+                650
+              ],
+              "protein": [
+                17,
+                27
+              ],
+              "fiber": [
+                14,
+                22
+              ],
+              "notes": "Toppings create most of the upper range."
+            }
+          },
+          {
+            "id": "split-pea",
+            "name": "Split pea soup",
+            "summary": "A mostly pantry-based, thick, comforting soup.",
+            "tags": [
+              "Low",
+              "Over 1 hour",
+              "Mostly unattended",
+              "Cold weather",
+              "Freezes well",
+              "Pantry-based",
+              "High fiber",
+              "Bean-based",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "split peas",
+                "onions",
+                "carrots",
+                "broth"
+              ],
+              "optional": [
+                "celery",
+                "smoked seasoning",
+                "sourdough"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                300,
+                550
+              ],
+              "protein": [
+                17,
+                25
+              ],
+              "fiber": [
+                14,
+                21
+              ],
+              "notes": "Bread and added fat raise calories."
+            }
+          },
+          {
+            "id": "kimchi-stew",
+            "name": "Kimchi stew",
+            "summary": "Kimchi, tofu, mushrooms, and broth, usually with rice on the side.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Reheats well",
+              "Weeknight dinner",
+              "Tofu-based",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "homemade kimchi",
+                "tofu",
+                "broth"
+              ],
+              "optional": [
+                "mushrooms",
+                "onions",
+                "green onions",
+                "gochujang",
+                "white rice"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl with optional rice",
+              "calories": [
+                350,
+                650
+              ],
+              "protein": [
+                18,
+                30
+              ],
+              "fiber": [
+                5,
+                10
+              ],
+              "notes": "Rice and tofu amount create most of the range."
+            }
+          },
+          {
+            "id": "coconut-curry-soup",
+            "name": "Coconut curry soup",
+            "summary": "A flexible soup with coconut milk, curry paste, tofu, vegetables, and optional rice noodles.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Refrigerates well",
+              "Uses frozen vegetables",
+              "Tofu-based",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "coconut milk",
+                "curry paste",
+                "broth"
+              ],
+              "chooseOne": {
+                "protein": [
+                  "tofu",
+                  "chicken"
+                ]
+              },
+              "chooseSeveral": {
+                "vegetables": [
+                  "mushrooms",
+                  "broccoli",
+                  "spinach",
+                  "carrots",
+                  "frozen vegetables"
+                ]
+              },
+              "optional": [
+                "rice noodles",
+                "limes",
+                "cilantro"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                450,
+                750
+              ],
+              "protein": [
+                18,
+                35
+              ],
+              "fiber": [
+                5,
+                11
+              ],
+              "notes": "Noodles and full-fat coconut milk increase calories."
+            }
+          },
+          {
+            "id": "minestrone",
+            "name": "Minestrone",
+            "summary": "A vegetable-heavy clean-out-the-fridge soup with beans and pasta.",
+            "tags": [
+              "Low",
+              "30–60 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Freezes well",
+              "Good for using produce",
+              "High fiber",
+              "Bean-based",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "beans",
+                "tomatoes",
+                "broth",
+                "mixed vegetables"
+              ],
+              "optional": [
+                "small pasta",
+                "greens",
+                "Parmesan",
+                "sourdough"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                350,
+                600
+              ],
+              "protein": [
+                15,
+                24
+              ],
+              "fiber": [
+                10,
+                18
+              ],
+              "notes": "Pasta, cheese, and bread raise calories."
+            }
+          },
+          {
+            "id": "tomato-soup",
+            "name": "Tomato soup",
+            "summary": "Simple tomato soup, especially good with grilled cheese or sourdough.",
+            "tags": [
+              "Very low",
+              "Under 30 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Refrigerates well",
+              "Side or light meal",
+              "Good with sourdough",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "tomatoes or canned tomatoes",
+                "onions or garlic",
+                "broth"
+              ],
+              "optional": [
+                "cream",
+                "Greek yogurt",
+                "grilled cheese",
+                "sourdough"
+              ]
+            },
+            "nutrition": {
+              "serving": "Soup alone or with sandwich",
+              "calories": [
+                200,
+                700
+              ],
+              "protein": [
+                5,
+                28
+              ],
+              "fiber": [
+                4,
+                9
+              ],
+              "notes": "The wide range accounts for grilled cheese or a substantial bread side."
+            }
+          },
+          {
+            "id": "miso-soup",
+            "name": "Miso soup",
+            "summary": "A quick side or light meal with tofu, seaweed, and optional noodles.",
+            "tags": [
+              "Very low",
+              "Under 15 minutes",
+              "Any season",
+              "Side or light meal",
+              "Tofu-based",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "miso paste",
+                "broth or water"
+              ],
+              "optional": [
+                "tofu",
+                "seaweed",
+                "green onions",
+                "mushrooms",
+                "noodles"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl",
+              "calories": [
+                80,
+                350
+              ],
+              "protein": [
+                5,
+                20
+              ],
+              "fiber": [
+                1,
+                6
+              ],
+              "notes": "Noodles and tofu turn this from a side into a light meal."
+            }
+          },
+          {
+            "id": "vegetable-soup",
+            "name": "Flexible vegetable soup",
+            "summary": "A general use-up soup for whatever vegetables are available.",
+            "tags": [
+              "Low",
+              "30–60 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Freezes well",
+              "Good for using produce",
+              "Vegetable-heavy",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "broth",
+                "onions",
+                "mixed vegetables"
+              ],
+              "optional": [
+                "beans",
+                "lentils",
+                "pasta",
+                "rice",
+                "tomatoes",
+                "sourdough"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                200,
+                600
+              ],
+              "protein": [
+                6,
+                25
+              ],
+              "fiber": [
+                5,
+                16
+              ],
+              "notes": "Beans, lentils, pasta, and bread determine whether this is light or substantial."
+            }
+          },
+          {
+            "id": "broccoli-cheddar",
+            "name": "Broccoli cheddar soup",
+            "summary": "A richer occasional comfort soup.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Cold weather",
+              "Refrigerates well",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "broccoli",
+                "cheddar",
+                "milk or cream",
+                "broth"
+              ],
+              "optional": [
+                "onions",
+                "carrots",
+                "sourdough"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl",
+              "calories": [
+                400,
+                700
+              ],
+              "protein": [
+                18,
+                28
+              ],
+              "fiber": [
+                5,
+                9
+              ],
+              "notes": "Cheese, cream, and bread create most of the range."
+            }
+          },
+          {
+            "id": "potato-leek",
+            "name": "Potato leek soup",
+            "summary": "An occasional smooth comfort soup despite potatoes not being a frequent choice.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Cold weather",
+              "Refrigerates well",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "potatoes",
+                "leeks",
+                "broth"
+              ],
+              "optional": [
+                "cream",
+                "butter",
+                "herbs",
+                "sourdough"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bowl",
+              "calories": [
+                300,
+                600
+              ],
+              "protein": [
+                7,
+                16
+              ],
+              "fiber": [
+                4,
+                8
+              ],
+              "notes": "Cream, butter, and bread raise calories."
+            }
+          }
+        ]
+      },
+      {
+        "id": "emergency",
+        "name": "Emergency meals",
+        "items": [
+          {
+            "id": "fairlife",
+            "name": "Fairlife protein shakes",
+            "energy": "None",
+            "minutes": 0,
+            "stockRule": "Keep 4 total: 2 at home and 2 at work.",
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Emergency meal",
+              "High protein",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "Fairlife protein shakes"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 bottle",
+              "calories": [
+                150,
+                250
+              ],
+              "protein": [
+                26,
+                42
+              ],
+              "fiber": [
+                0,
+                2
+              ],
+              "notes": "Depends on product line."
+            }
+          },
+          {
+            "id": "fish-crackers",
+            "name": "Crackers, canned fish, and homemade pickles",
+            "energy": "None",
+            "minutes": 3,
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Emergency meal",
+              "Grazing",
+              "High protein",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "crackers",
+                "canned fish",
+                "homemade pickles"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 assembled meal",
+              "calories": [
+                350,
+                650
+              ],
+              "protein": [
+                20,
+                35
+              ],
+              "fiber": [
+                3,
+                8
+              ],
+              "notes": "Cracker portion and fish type create the range."
+            }
+          },
+          {
+            "id": "yogurt-bowl",
+            "name": "Greek yogurt bowl",
+            "energy": "None",
+            "minutes": 3,
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Emergency meal",
+              "High protein",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "Greek yogurt"
+              ],
+              "optional": [
+                "berries",
+                "chia seeds",
+                "honey",
+                "jam",
+                "granola"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                250,
+                500
+              ],
+              "protein": [
+                18,
+                30
+              ],
+              "fiber": [
+                4,
+                12
+              ],
+              "notes": "Chia, fruit, granola, and sweetener affect the range."
+            }
+          },
+          {
+            "id": "pb-toast",
+            "name": "Peanut butter toast",
+            "energy": "None",
+            "minutes": 4,
+            "tags": [
+              "Very low",
+              "Under 5 minutes",
+              "Emergency meal",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "bread",
+                "peanut butter"
+              ]
+            },
+            "nutrition": {
+              "serving": "2 slices",
+              "calories": [
+                350,
+                550
+              ],
+              "protein": [
+                12,
+                20
+              ],
+              "fiber": [
+                5,
+                10
+              ],
+              "notes": "Bread type and peanut butter amount matter most."
+            }
+          },
+          {
+            "id": "pickled-eggs-plate",
+            "name": "Pickled eggs, crackers, and vegetables",
+            "energy": "None",
+            "minutes": 4,
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Emergency meal",
+              "Grazing",
+              "High protein",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "homemade pickled eggs",
+                "crackers"
+              ],
+              "optional": [
+                "raw vegetables",
+                "cheese",
+                "fruit",
+                "seaweed"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 plate",
+              "calories": [
+                300,
+                600
+              ],
+              "protein": [
+                18,
+                30
+              ],
+              "fiber": [
+                3,
+                10
+              ],
+              "notes": "Cheese, crackers, and number of eggs drive the range."
+            }
+          },
+          {
+            "id": "dumplings",
+            "name": "Frozen dumplings",
+            "energy": "Five minutes",
+            "minutes": 10,
+            "tags": [
+              "Very low",
+              "Under 15 minutes",
+              "Emergency meal",
+              "Uses freezer staples",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "frozen dumplings"
+              ]
+            },
+            "nutrition": {
+              "serving": "Meal-size portion",
+              "calories": [
+                350,
+                650
+              ],
+              "protein": [
+                12,
+                25
+              ],
+              "fiber": [
+                3,
+                8
+              ],
+              "notes": "Brand and serving size vary widely."
+            }
+          },
+          {
+            "id": "eggs-toast",
+            "name": "Eggs and toast",
+            "energy": "Five minutes",
+            "minutes": 10,
+            "tags": [
+              "Very low",
+              "Under 15 minutes",
+              "Emergency meal",
+              "High protein",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "eggs",
+                "bread"
+              ],
+              "optional": [
+                "homemade pickles",
+                "kimchi",
+                "cheese",
+                "fruit"
+              ]
+            },
+            "nutrition": {
+              "serving": "2–3 eggs with toast",
+              "calories": [
+                350,
+                650
+              ],
+              "protein": [
+                20,
+                32
+              ],
+              "fiber": [
+                3,
+                9
+              ],
+              "notes": "Bread, cheese, and cooking fat affect calories."
+            }
+          },
+          {
+            "id": "ramen",
+            "name": "Upgraded instant ramen",
+            "energy": "Five minutes",
+            "minutes": 12,
+            "tags": [
+              "Very low",
+              "Under 15 minutes",
+              "Emergency meal",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "instant ramen"
+              ],
+              "optional": [
+                "eggs",
+                "tofu",
+                "frozen vegetables",
+                "kimchi",
+                "seaweed"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 upgraded bowl",
+              "calories": [
+                450,
+                750
+              ],
+              "protein": [
+                15,
+                30
+              ],
+              "fiber": [
+                3,
+                10
+              ],
+              "notes": "Protein and vegetable additions improve balance."
+            }
+          },
+          {
+            "id": "quesadilla",
+            "name": "Quesadilla",
+            "energy": "Fifteen minutes",
+            "minutes": 12,
+            "tags": [
+              "Very low",
+              "Under 15 minutes",
+              "Emergency meal",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "tortillas",
+                "cheese"
+              ],
+              "chooseSeveral": {
+                "fillings": [
+                  "black beans",
+                  "avocados",
+                  "mushrooms",
+                  "spinach",
+                  "jalapeños",
+                  "onions"
+                ]
+              },
+              "optional": [
+                "salsa",
+                "Japanese mayonnaise"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large quesadilla",
+              "calories": [
+                450,
+                750
+              ],
+              "protein": [
+                18,
+                32
+              ],
+              "fiber": [
+                4,
+                12
+              ],
+              "notes": "Beans and vegetables raise fiber."
+            },
+            "summary": "A fast tortilla-and-cheese meal with flexible fillings such as black beans, avocado, mushrooms, or spinach."
+          },
+          {
+            "id": "pasta-jar",
+            "name": "Pasta with jarred sauce",
+            "energy": "Fifteen minutes",
+            "minutes": 15,
+            "tags": [
+              "Very low",
+              "Under 15 minutes",
+              "Emergency meal",
+              "Mostly pantry ingredients",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "pasta",
+                "jarred sauce"
+              ],
+              "optional": [
+                "white beans",
+                "frozen vegetables",
+                "cheese"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 large bowl",
+              "calories": [
+                500,
+                800
+              ],
+              "protein": [
+                16,
+                30
+              ],
+              "fiber": [
+                6,
+                14
+              ],
+              "notes": "Beans and vegetables improve protein and fiber."
+            }
+          },
+          {
+            "id": "grilled-cheese",
+            "name": "Grilled cheese and tomato soup",
+            "energy": "Fifteen minutes",
+            "minutes": 15,
+            "tags": [
+              "Low",
+              "Under 15 minutes",
+              "Emergency meal",
+              "Cold weather",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "bread",
+                "cheese",
+                "tomato soup"
+              ],
+              "optional": [
+                "butter"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 sandwich and soup",
+              "calories": [
+                550,
+                850
+              ],
+              "protein": [
+                20,
+                32
+              ],
+              "fiber": [
+                5,
+                10
+              ],
+              "notes": "Cheese, butter, and bread size create most of the range."
+            },
+            "summary": "A comforting grilled cheese paired with tomato soup."
+          }
+        ]
+      },
+      {
+        "id": "grazing",
+        "name": "Grazing & snacks",
+        "items": [
+          {
+            "id": "grazing-template",
+            "name": "Generate a grazing plate",
+            "summary": "Choose 1–2 proteins, 1 crunch, 1 acidic item, 1 fruit or vegetable, and an optional extra.",
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Grazing",
+              "Flexible protein",
+              "Frequent favorite"
+            ],
+            "generator": {
+              "protein": [
+                "pickled eggs",
+                "canned tuna",
+                "sardines",
+                "cheese",
+                "Greek yogurt dips"
+              ],
+              "crunch": [
+                "crackers",
+                "toast",
+                "cucumbers",
+                "carrots",
+                "bell peppers",
+                "seaweed snacks"
+              ],
+              "acid": [
+                "homemade cucumber pickles",
+                "pickled carrots",
+                "pickled cauliflower",
+                "pickled red onion",
+                "pickled jalapeños",
+                "kimchi",
+                "olives"
+              ],
+              "produce": [
+                "apples",
+                "grapes",
+                "clementine",
+                "berries",
+                "raw vegetables"
+              ],
+              "extra": [
+                "mustard",
+                "jam",
+                "nuts",
+                "honey",
+                "hot sauce"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 generated plate",
+              "calories": [
+                300,
+                700
+              ],
+              "protein": [
+                15,
+                35
+              ],
+              "fiber": [
+                4,
+                12
+              ],
+              "notes": "The generator favors balance, but portions remain flexible."
+            }
+          },
+          {
+            "id": "portable-snacks",
+            "name": "Portable work snacks",
+            "summary": "Quick items that can go in a bag or office fridge.",
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Packed lunch",
+              "Regular option"
+            ],
+            "ingredients": {
+              "chooseSeveral": {
+                "options": [
+                  "Fairlife shakes",
+                  "apples",
+                  "bananas",
+                  "clementines",
+                  "Greek yogurt",
+                  "trail mix",
+                  "crackers",
+                  "cheese sticks",
+                  "seaweed snacks",
+                  "peanut butter crackers",
+                  "roasted chickpeas"
+                ]
+              }
+            },
+            "nutrition": {
+              "serving": "1–2 snacks",
+              "calories": [
+                100,
+                450
+              ],
+              "protein": [
+                2,
+                30
+              ],
+              "fiber": [
+                1,
+                10
+              ],
+              "notes": "Choose a protein-forward option when the snack needs to carry a meal gap."
+            }
+          },
+          {
+            "id": "cottage-cheese-snack",
+            "name": "Cottage cheese snack",
+            "summary": "Cottage cheese with chili crunch and honey.",
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Grazing",
+              "High protein",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "cottage cheese"
+              ],
+              "optional": [
+                "chili crunch",
+                "honey"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 snack bowl",
+              "calories": [
+                180,
+                350
+              ],
+              "protein": [
+                20,
+                30
+              ],
+              "fiber": [
+                0,
+                2
+              ],
+              "notes": "Honey and chili crunch affect the upper end."
+            }
+          }
+        ]
+      },
+      {
+        "id": "dessert",
+        "name": "Dessert",
+        "items": [
+          {
+            "id": "yogurt-dessert",
+            "name": "Yogurt dessert",
+            "summary": "Yogurt with chia seeds and either frozen fruit or banana.",
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Any season",
+              "High protein",
+              "High fiber",
+              "Frequent favorite"
+            ],
+            "ingredients": {
+              "required": [
+                "yogurt",
+                "chia seeds"
+              ],
+              "chooseOne": {
+                "fruit": [
+                  "frozen fruit",
+                  "bananas"
+                ]
+              }
+            },
+            "nutrition": {
+              "serving": "1 dessert bowl",
+              "calories": [
+                220,
+                450
+              ],
+              "protein": [
+                17,
+                28
+              ],
+              "fiber": [
+                6,
+                13
+              ],
+              "notes": "Fruit amount and yogurt type create most of the range."
+            }
+          },
+          {
+            "id": "fruit",
+            "name": "Fruit dessert",
+            "summary": "Fresh berries, frozen grapes, fruit salad, or baked fruit.",
+            "tags": [
+              "No preparation",
+              "Under 15 minutes",
+              "Any season",
+              "Regular option"
+            ],
+            "ingredients": {
+              "chooseOne": {
+                "fruit": [
+                  "fresh berries",
+                  "frozen grapes",
+                  "fruit salad",
+                  "baked apples"
+                ]
+              },
+              "optional": [
+                "Greek yogurt",
+                "cinnamon",
+                "honey"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 serving",
+              "calories": [
+                80,
+                300
+              ],
+              "protein": [
+                1,
+                18
+              ],
+              "fiber": [
+                3,
+                9
+              ],
+              "notes": "Greek yogurt raises protein."
+            }
+          },
+          {
+            "id": "crisp",
+            "name": "Apple crisp or berry crumble",
+            "summary": "A warm occasional dessert.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Cool weather",
+              "Cold weather",
+              "Good for guests",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "fruit",
+                "oats or crumble topping",
+                "sugar",
+                "butter"
+              ],
+              "optional": [
+                "Greek yogurt",
+                "ice cream"
+              ]
+            },
+            "nutrition": {
+              "serving": "1 portion",
+              "calories": [
+                300,
+                600
+              ],
+              "protein": [
+                3,
+                12
+              ],
+              "fiber": [
+                4,
+                9
+              ],
+              "notes": "Topping size and ice cream create most of the range."
+            }
+          },
+          {
+            "id": "sweet-treat",
+            "name": "Sweet treat on hand",
+            "summary": "Dark chocolate, cookies, or ice cream when that is what sounds good.",
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Any season",
+              "Regular option"
+            ],
+            "ingredients": {
+              "chooseOne": {
+                "treat": [
+                  "dark chocolate",
+                  "cookies",
+                  "ice cream"
+                ]
+              }
+            },
+            "nutrition": {
+              "serving": "1 chosen portion",
+              "calories": [
+                120,
+                450
+              ],
+              "protein": [
+                1,
+                8
+              ],
+              "fiber": [
+                0,
+                5
+              ],
+              "notes": "Use the package serving as the most accurate reference."
+            }
+          },
+          {
+            "id": "rice-krispie-treats",
+            "name": "Rice Krispie treats",
+            "summary": "A simple marshmallow cereal treat.",
+            "tags": [
+              "Low",
+              "Under 30 minutes",
+              "Any season",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "crispy rice cereal",
+                "marshmallows",
+                "butter"
+              ]
+            }
+          },
+          {
+            "id": "nutella-banana-crepes",
+            "name": "Nutella banana crepes",
+            "summary": "Dessert crepes with Nutella and sliced banana.",
+            "tags": [
+              "Moderate",
+              "30–60 minutes",
+              "Any season",
+              "Occasional reminder"
+            ],
+            "ingredients": {
+              "required": [
+                "flour",
+                "eggs",
+                "milk",
+                "Nutella",
+                "bananas",
+                "butter"
+              ],
+              "optional": [
+                "powdered sugar"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "prep",
+        "name": "Meal prep & baking",
+        "items": [
+          {
+            "id": "banana-choc-bread",
+            "name": "Chocolate chip banana bread or muffins",
+            "summary": "Banana bread or muffins with chocolate chips and chia seeds for easy workday prep.",
+            "tags": [
+              "Moderate",
+              "Mostly unattended",
+              "Any season",
+              "Refrigerates well",
+              "Packed lunch",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "bananas",
+                "flour",
+                "eggs",
+                "butter",
+                "milk",
+                "chocolate chips",
+                "chia seeds"
+              ],
+              "optional": [
+                "Greek yogurt",
+                "cinnamon"
+              ]
+            }
+          },
+          {
+            "id": "blueberry-muffins",
+            "name": "Blueberry yogurt chia muffins",
+            "summary": "Blueberry muffins enriched with Greek yogurt and chia seeds for packed breakfasts.",
+            "tags": [
+              "Moderate",
+              "Mostly unattended",
+              "Any season",
+              "Refrigerates well",
+              "Packed lunch",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "blueberries",
+                "flour",
+                "eggs",
+                "Greek yogurt",
+                "chia seeds"
+              ],
+              "optional": [
+                "butter",
+                "milk",
+                "vanilla extract"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "snacks-sides",
+        "name": "Snacks & sides",
+        "items": [
+          {
+            "id": "crosshatched-potatoes",
+            "name": "Cross-hatched spiced potatoes",
+            "summary": "Thin cross-hatched potato slices baked until crisp and eaten with ketchup and Japanese mayonnaise. Mostly hands-off baking time.",
+            "tags": [
+              "Low",
+              "Mostly unattended",
+              "Any season",
+              "Side or light meal",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "potatoes",
+                "neutral oil",
+                "ketchup",
+                "Japanese mayonnaise"
+              ],
+              "optional": [
+                "smoked paprika",
+                "garlic powder",
+                "onion powder",
+                "salt",
+                "pepper"
+              ]
+            }
+          },
+          {
+            "id": "popcorn",
+            "name": "Popcorn",
+            "summary": "A quick salty snack to keep around.",
+            "tags": [
+              "Very low",
+              "Under 15 minutes",
+              "Any season",
+              "Pantry-based",
+              "Regular option"
+            ],
+            "ingredients": {
+              "required": [
+                "popcorn kernels"
+              ],
+              "optional": [
+                "butter",
+                "salt"
+              ]
+            }
+          },
+          {
+            "id": "trail-mix",
+            "name": "Trail mix",
+            "summary": "An uncommon but useful shelf-stable quick bite.",
+            "tags": [
+              "No preparation",
+              "Under 5 minutes",
+              "Any season",
+              "Pantry-based",
+              "Rare but enjoyable"
+            ],
+            "ingredients": {
+              "required": [
+                "trail mix"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "pantry": {
+    "alwaysStocked": {
+      "Pantry": [
+        "white rice",
+        "lentils",
+        "black beans",
+        "white beans",
+        "red lentils",
+        "split peas",
+        "peanut butter",
+        "vinegar",
+        "coconut milk",
+        "curry paste",
+        "gochujang",
+        "pasta",
+        "crackers",
+        "canned fish",
+        "instant ramen",
+        "chia seeds",
+        "instant oatmeal",
+        "lemonade powder",
+        "Trader Joe's matcha latte mix",
+        "instant coffee",
+        "rice noodles",
+        "rice paper wrappers",
+        "furikake",
+        "nori",
+        "cocoa powder",
+        "chocolate chips",
+        "powdered sugar",
+        "low-sugar gelatin mixes",
+        "popcorn kernels",
+        "trail mix",
+        "tea",
+        "sparkling water",
+        "hot chocolate mix",
+        "apple cider packets"
+      ],
+      "Freezer": [
+        "frozen broccoli",
+        "frozen mixed vegetables",
+        "edamame",
+        "frozen dumplings",
+        "frozen hash browns",
+        "frozen spinach",
+        "frozen fruit",
+        "frozen shrimp"
+      ],
+      "Fridge": [
+        "eggs",
+        "tofu",
+        "cheese",
+        "yogurt",
+        "cottage cheese",
+        "milk",
+        "butter",
+        "relish",
+        "Japanese mayonnaise",
+        "salsa",
+        "BBQ sauce"
+      ],
+      "Produce basics": [
+        "onions",
+        "garlic",
+        "ginger",
+        "green onions",
+        "fruit",
+        "lettuce",
+        "celery",
+        "potatoes",
+        "cucumbers",
+        "tomatoes",
+        "avocados",
+        "cilantro",
+        "lemons",
+        "limes"
+      ]
+    },
+    "minimumStock": [
+      {
+        "item": "Fairlife protein shakes",
+        "minimum": 4,
+        "locations": {
+          "home": 2,
+          "work": 2
+        },
+        "shoppingNote": "Consider ordering a larger case online when the price per bottle is better."
+      }
+    ],
+    "homemadeStaples": [
+      {
+        "id": "kimchi",
+        "name": "Kimchi",
+        "container": "Large kimchi tub",
+        "statuses": [
+          "Plenty available",
+          "Running low",
+          "Need to make"
+        ],
+        "ingredients": [
+          "Napa cabbages",
+          "salt",
+          "flour",
+          "sugar",
+          "daikons",
+          "carrots",
+          "green onions",
+          "garlic",
+          "ginger",
+          "onions",
+          "fish sauce",
+          "fermented shrimp",
+          "gochujang",
+          "gochugaru"
+        ]
+      },
+      {
+        "id": "pickles",
+        "name": "Mixed pickles",
+        "container": "Large pickle tub",
+        "statuses": [
+          "Plenty available",
+          "Running low",
+          "Need to make"
+        ],
+        "frequent": [
+          "cucumbers",
+          "carrots",
+          "red onions",
+          "jalapeños",
+          "cauliflower",
+          "eggs"
+        ],
+        "occasional": [
+          "radishes",
+          "daikons (Korean-style or kimchied)"
+        ],
+        "supplies": [
+          "vinegar",
+          "salt",
+          "sugar",
+          "garlic",
+          "dill",
+          "mustard seeds",
+          "peppercorns",
+          "red pepper flakes"
+        ]
+      }
+    ],
+    "weekDefaults": {
+      "mainMeals": 2,
+      "soups": 1,
+      "emergencyOptions": 2,
+      "grazingSetups": 1,
+      "portableSnacks": 2,
+      "desserts": 1
+    },
+    "spicesFlavorings": {
+      "Salt, Baking & Staples": [
+        "kosher salt",
+        "white sugar",
+        "brown sugar",
+        "flour",
+        "cornstarch",
+        "baking powder",
+        "baking soda",
+        "vanilla extract",
+        "yeast"
+      ],
+      "Herbs & Spices": [
+        "oregano",
+        "basil",
+        "thyme",
+        "rosemary",
+        "sage",
+        "dried parsley",
+        "dill",
+        "smoked paprika",
+        "garlic powder",
+        "onion powder",
+        "cumin",
+        "coriander",
+        "turmeric",
+        "cayenne",
+        "chili powder",
+        "red pepper flakes",
+        "cinnamon",
+        "nutmeg",
+        "ground ginger"
+      ],
+      "Asian & Curry": [
+        "gochugaru",
+        "garam masala",
+        "curry powder"
+      ],
+      "Umami & Broth": [
+        "Better Than Bouillon",
+        "stock cubes",
+        "Trader Joe's mushroom umami seasoning",
+        "MSG"
+      ],
+      "Oils & Vinegars": [
+        "olive oil",
+        "neutral oil",
+        "sesame oil",
+        "rice vinegar",
+        "white vinegar",
+        "apple cider vinegar"
+      ],
+      "Condiments": [
+        "soy sauce",
+        "fish sauce",
+        "honey",
+        "ketchup",
+        "chili crunch",
+        "mustard",
+        "hoisin sauce"
+      ]
+    },
+    "householdPet": {
+      "Household": [
+        "dish soap",
+        "dishwasher detergent",
+        "Clorox wipes",
+        "toilet paper",
+        "laundry detergent",
+        "trash bags",
+        "cleaning spray",
+        "sponges"
+      ],
+      "Personal Care": [
+        "hand soap",
+        "shampoo",
+        "conditioner",
+        "body wash or bar soap",
+        "toothpaste",
+        "deodorant"
+      ],
+      "Pet Supplies": [
+        "cat food",
+        "cat treats"
+      ]
+    },
+    "rememberedItems": []
+  }
+};
 const QUICK_MEALS=[
 {id:'quick-yogurt',name:'Yogurt bowl',place:'home',tier:1,required:['yogurt']},
 {id:'quick-cottage',name:'Cottage cheese with chili crunch and honey',place:'home',tier:2,required:['cottage cheese']},
@@ -56,7 +2931,7 @@ function weeklyCandidates(){return allItems().filter(m=>!['dessert','grazing','s
 function chooseDistinct(pool,n,score){return [...pool].map(m=>({m,v:score(m)+Math.random()*.35})).sort((a,b)=>a.v-b.v).slice(0,n).map(x=>x.m)}
 function buildWeek(mode='variety'){if(state.week.length&&!confirm('Replace your current week with a new suggested week?'))return;const pool=weeklyCandidates();let chosen=[];if(mode==='favorites'){const fav=pool.filter(m=>state.favorites[m.id]);chosen=chooseDistinct(fav.length?fav:pool,6,m=>recencyPenalty(m))}else if(mode==='variety'){const fav=pool.filter(m=>state.favorites[m.id]);const non=pool.filter(m=>!state.favorites[m.id]);chosen=[...chooseDistinct(fav.length?fav:pool,5,m=>recencyPenalty(m)),...chooseDistinct(non.length?non:pool,1,m=>recencyPenalty(m))];chosen=[...new Map(chosen.map(m=>[m.id,m])).values()];if(chosen.length<6)chosen.push(...chooseDistinct(pool.filter(m=>!chosen.some(x=>x.id===m.id)),6-chosen.length,m=>recencyPenalty(m)))}else if(mode==='smallshop'){const selected=[],covered=new Set();while(selected.length<6){const remain=pool.filter(m=>!selected.some(x=>x.id===m.id));if(!remain.length)break;remain.sort((a,b)=>{const ra=mealReadiness(a),rb=mealReadiness(b);const na=ra.missing.filter(x=>!covered.has(x)).length,nb=rb.missing.filter(x=>!covered.has(x)).length;return na-nb||ra.missing.length-rb.missing.length||recencyPenalty(a)-recencyPenalty(b)||Math.random()-.5});const pick=remain[0];selected.push(pick);mealReadiness(pick).missing.forEach(x=>covered.add(x))}chosen=selected}else chosen=chooseDistinct(pool,6,m=>recencyPenalty(m));state.week=chosen.map(m=>makeWeekEntry(m.id));reopenShopping();save();renderWeek();navTo('week')}
 function selectedIngredients(entry){const m=getMeal(entry.mealId),ing=m?.ingredients||{},a=[...(ing.required||[])];Object.values(entry.selections?.one||{}).forEach(v=>v&&!['no added protein','plain (nothing extra)'].includes(v)&&a.push(v));Object.values(entry.selections?.many||{}).flat().forEach(v=>a.push(v));Object.entries(entry.selections?.optional||{}).forEach(([v,on])=>on&&a.push(v));return a}
-const aliases={'white rice or rice-lentil mix':'rice','white rice':'rice','cold cooked rice':'rice','thin-sliced potato':'potatoes','red onion':'onion','yellow onion':'onion','green onions':'green onion','frozen mixed vegetables':'frozen vegetables','frozen stir-fry vegetables':'frozen vegetables','frozen vegetable mix':'frozen vegetables','frozen stir-fry mix':'frozen vegetables','bananas':'banana','tomatoes':'tomato','cucumbers':'cucumber','jalapeños':'jalapeño','jalepenos':'jalapeño','jalepeno':'jalapeño','sourdough bread':'flour','seasoning':'','seasonings':'','trader joe’s mushroom & company umami seasoning':"trader joe's mushroom umami seasoning"};
+const aliases={'gochujang sauce':'gochujang','white rice or rice-lentil mix':'rice','white rice':'rice','cold cooked rice':'rice','thin-sliced potato':'potatoes','red onion':'onion','yellow onion':'onion','green onions':'green onion','frozen mixed vegetables':'frozen vegetables','frozen stir-fry vegetables':'frozen vegetables','frozen vegetable mix':'frozen vegetables','frozen stir-fry mix':'frozen vegetables','bananas':'banana','tomatoes':'tomato','cucumbers':'cucumber','jalapeños':'jalapeño','jalepenos':'jalapeño','jalepeno':'jalapeño','sourdough bread':'flour','seasoning':'','seasonings':'','trader joe’s mushroom & company umami seasoning':"trader joe's mushroom umami seasoning"};
 function canonical(x){const k=String(x||'').trim().toLowerCase();return aliases[k]??k}
 const qtyOverrides={onion:[.5,'onion'],carrot:[1,'carrot'],carrots:[1,'carrot'],garlic:[.25,'bulb'],ginger:[.25,'piece'],tofu:[1,'block'],egg:[1,'egg'],eggs:[2,'egg'],'green onion':[.5,'bunch'],mushrooms:[.5,'package'],spinach:[.5,'bag'],zucchini:[1,'zucchini'],broccoli:[.5,'head'],cabbage:[.25,'head'],cucumber:[1,'cucumber'],potatoes:[1,'potato'],cauliflower:[.5,'head'],lemon:[1,'lemon'],lime:[1,'lime'],'coconut milk':[1,'can'],'canned tomatoes':[1,'can'],beans:[1,'can'],'black beans':[1,'can'],'white beans':[1,'can'],rice:[.5,'bag-equivalent'],pasta:[.5,'box'],cheese:[.5,'package'],yogurt:[.5,'container'],'cottage cheese':[.5,'container'],'chia seeds':[0,'pantry'],'frozen fruit':[.5,'bag'],banana:[2,'banana'],bread:[.5,'loaf'],'Fairlife protein shakes':[2,'bottle'],'frozen vegetables':[.5,'bag'],edamame:[.5,'bag'],'frozen dumplings':[.5,'bag']};
 function quantityFor(item){const k=canonical(item);if(qtyOverrides[k])return qtyOverrides[k];if(/sauce|oil|vinegar|salt|pepper|powder|paprika|cumin|coriander|turmeric|cayenne|chili|cinnamon|nutmeg|ginger|masala|gochugaru|bouillon|stock cube|msg|honey|ketchup|soy sauce|fish sauce|gochujang|yeast|flour|sugar|cornstarch|baking|vanilla/i.test(k))return [0,'pantry'];return [1,'package']}

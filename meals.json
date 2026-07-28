@@ -88,7 +88,7 @@
           "ingredients": {
             "required": [
               "white rice or rice-lentil mix",
-              "gochujang sauce"
+              "gochujang"
             ],
             "chooseSeveral": {
               "vegetables": [
@@ -1112,7 +1112,8 @@
             "required": [
               "flour",
               "eggs",
-              "milk"
+              "milk",
+              "butter"
             ],
             "chooseSeveral": {
               "fillings": [
@@ -1123,10 +1124,7 @@
                 "olives",
                 "mushrooms"
               ]
-            },
-            "optional": [
-              "butter"
-            ]
+            }
           }
         }
       ]
@@ -2483,10 +2481,10 @@
               "eggs",
               "milk",
               "Nutella",
-              "bananas"
+              "bananas",
+              "butter"
             ],
             "optional": [
-              "butter",
               "powdered sugar"
             ]
           }
@@ -2515,6 +2513,7 @@
               "flour",
               "eggs",
               "butter",
+              "milk",
               "chocolate chips",
               "chia seeds"
             ],

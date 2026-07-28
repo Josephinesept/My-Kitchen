@@ -53,6 +53,7 @@
       "yogurt",
       "cottage cheese",
       "milk",
+      "butter",
       "relish",
       "Japanese mayonnaise",
       "salsa",
@@ -213,10 +214,7 @@
       "ketchup",
       "chili crunch",
       "mustard",
-      "hoisin sauce",
-      "Japanese mayonnaise",
-      "salsa",
-      "BBQ sauce"
+      "hoisin sauce"
     ]
   },
   "householdPet": {

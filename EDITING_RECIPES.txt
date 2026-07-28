@@ -1,0 +1,29 @@
+EDITING RECIPES IN JOSEPHINE'S KITCHEN
+
+1. Open index.html in a plain-text or code editor.
+2. Search for the recipe name, such as Chocolate chip banana bread or muffins.
+3. In that recipe, find the "ingredients" block.
+4. Edit the ingredient lists under any of these headings:
+   - "required": ingredients always needed
+   - "chooseOne": choose one option from a named group
+   - "chooseSeveral": select multiple options from a named group
+   - "optional": optional additions
+5. Preserve JSON punctuation: every ingredient is in quotation marks, list items are separated by commas, and lists use square brackets.
+6. Save index.html and upload it with the rest of the app files.
+
+EXAMPLE
+"ingredients": {
+  "required": [
+    "bananas",
+    "flour",
+    "eggs",
+    "butter",
+    "milk"
+  ],
+  "optional": [
+    "cinnamon"
+  ]
+}
+
+IMPORTANT
+The live app reads the embedded DATA block in index.html. meals.json is an editable reference copy, but changing meals.json by itself will not update the app. Repeat the same recipe edit in meals.json if you want both files synchronized.

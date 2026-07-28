@@ -36,3 +36,16 @@ VERSION 5.2
 
 
 Version 5.3 adds favorites, last-made tracking, recipe readiness, four weekly-plan generators (Favorites, Favorites + Surprise, Smallest Shop, Random), and the newly discussed meals and pantry items.
+
+
+VERSION 5.4
+- Adds butter to the Fridge pantry list.
+- Removes duplicate Japanese mayonnaise, salsa, and BBQ sauce entries from Condiments; they remain under Fridge.
+- Changes Bibimbap from “gochujang sauce” to “gochujang,” with an alias for older data.
+- Adds milk to chocolate-chip banana bread/muffins and treats butter as required for crepes.
+- Formats the embedded DATA section in index.html so recipe ingredients are easier to edit manually.
+
+MANUALLY EDITING RECIPES
+The live app uses the DATA block embedded near the top of index.html. Open index.html in a text editor, search for the recipe name, and edit that recipe’s ingredients object. The usual groups are required, chooseOne, chooseSeveral, and optional. Keep quotation marks, commas, square brackets, and braces valid.
+
+meals.json is a readable reference copy, but changing meals.json alone does not currently change the live app. Make the same edit in meals.json if you want the reference file to stay synchronized.
