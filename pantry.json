@@ -17,27 +17,62 @@
       "canned fish",
       "instant ramen",
       "chia seeds",
-      "instant oatmeal"
+      "instant oatmeal",
+      "lemonade powder",
+      "Trader Joe's matcha latte mix",
+      "instant coffee",
+      "rice noodles",
+      "rice paper wrappers",
+      "furikake",
+      "nori",
+      "cocoa powder",
+      "chocolate chips",
+      "powdered sugar",
+      "low-sugar gelatin mixes",
+      "popcorn kernels",
+      "trail mix",
+      "tea",
+      "sparkling water",
+      "hot chocolate mix",
+      "apple cider packets"
     ],
     "Freezer": [
       "frozen broccoli",
       "frozen mixed vegetables",
       "edamame",
-      "frozen dumplings"
+      "frozen dumplings",
+      "frozen hash browns",
+      "frozen spinach",
+      "frozen fruit",
+      "frozen shrimp"
     ],
     "Fridge": [
       "eggs",
       "tofu",
       "cheese",
       "yogurt",
-      "cottage cheese"
+      "cottage cheese",
+      "milk",
+      "relish",
+      "Japanese mayonnaise",
+      "salsa",
+      "BBQ sauce"
     ],
     "Produce basics": [
       "onions",
       "garlic",
       "ginger",
       "green onions",
-      "fruit"
+      "fruit",
+      "lettuce",
+      "celery",
+      "potatoes",
+      "cucumbers",
+      "tomatoes",
+      "avocados",
+      "cilantro",
+      "lemons",
+      "limes"
     ]
   },
   "minimumStock": [
@@ -177,7 +212,11 @@
       "honey",
       "ketchup",
       "chili crunch",
-      "mustard"
+      "mustard",
+      "hoisin sauce",
+      "Japanese mayonnaise",
+      "salsa",
+      "BBQ sauce"
     ]
   },
   "householdPet": {

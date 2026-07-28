@@ -849,6 +849,285 @@
             ],
             "notes": "Cheese, tortilla size, and filling determine most of the range."
           }
+        },
+        {
+          "id": "summer-rolls",
+          "name": "Summer rolls",
+          "summary": "Fresh rice-paper rolls with vegetables and tofu, shrimp, avocado, or a combination.",
+          "tags": [
+            "Moderate",
+            "30–60 minutes",
+            "Hot weather",
+            "Warm weather",
+            "Best fresh",
+            "Vegetable-heavy",
+            "Flexible protein",
+            "Occasional reminder"
+          ],
+          "ingredients": {
+            "required": [
+              "rice paper wrappers",
+              "cucumbers",
+              "carrots",
+              "lettuce"
+            ],
+            "chooseSeveral": {
+              "fillings": [
+                "lettuce",
+                "tofu",
+                "shrimp",
+                "avocados"
+              ],
+              "greens and herbs": [
+                "lettuce",
+                "cabbage",
+                "cilantro",
+                "mint",
+                "basil",
+                "green onions"
+              ]
+            },
+            "optional": [
+              "rice noodles",
+              "bell peppers",
+              "bean sprouts",
+              "hoisin sauce",
+              "peanut sauce",
+              "limes"
+            ]
+          },
+          "nutrition": {
+            "serving": "3–5 rolls with dipping sauce",
+            "calories": [
+              350,
+              700
+            ],
+            "protein": [
+              12,
+              35
+            ],
+            "fiber": [
+              5,
+              12
+            ],
+            "notes": "Protein choice, avocado, noodles, and dipping sauce create most of the range."
+          }
+        },
+        {
+          "id": "teriyaki-salmon",
+          "name": "Teriyaki salmon",
+          "summary": "Salmon with teriyaki sauce, rice, and a flexible vegetable side.",
+          "tags": [
+            "Low",
+            "Under 30 minutes",
+            "Any season",
+            "Best fresh",
+            "Weeknight dinner",
+            "High protein",
+            "Occasional reminder"
+          ],
+          "ingredients": {
+            "required": [
+              "salmon",
+              "teriyaki sauce",
+              "white rice"
+            ],
+            "chooseSeveral": {
+              "vegetables": [
+                "broccoli",
+                "green beans",
+                "bok choy",
+                "cabbage",
+                "carrots",
+                "edamame",
+                "frozen mixed vegetables"
+              ]
+            },
+            "optional": [
+              "green onions",
+              "sesame seeds",
+              "ginger",
+              "limes"
+            ]
+          },
+          "nutrition": {
+            "serving": "1 salmon fillet with rice and vegetables",
+            "calories": [
+              500,
+              800
+            ],
+            "protein": [
+              30,
+              45
+            ],
+            "fiber": [
+              4,
+              10
+            ],
+            "notes": "Rice portion, salmon size, and sauce amount create most of the range."
+          }
+        },
+        {
+          "id": "burrito-bowls",
+          "name": "Burrito bowls",
+          "summary": "Rice-and-bean bowls with vegetables, salsa, and flexible toppings.",
+          "tags": [
+            "Low",
+            "Under 30 minutes",
+            "Any season",
+            "Packed lunch",
+            "Bean-based",
+            "Flexible protein",
+            "Regular option"
+          ],
+          "ingredients": {
+            "required": [
+              "white rice",
+              "black beans"
+            ],
+            "chooseSeveral": {
+              "toppings": [
+                "lettuce",
+                "tomatoes",
+                "avocados",
+                "corn",
+                "cheese",
+                "salsa",
+                "Greek yogurt",
+                "cilantro",
+                "limes"
+              ]
+            },
+            "optional": [
+              "tofu",
+              "eggs"
+            ]
+          }
+        },
+        {
+          "id": "saag-paneer",
+          "name": "Saag paneer with naan",
+          "summary": "Creamy spiced spinach with paneer, ideally served with homemade naan.",
+          "tags": [
+            "Moderate",
+            "30–60 minutes",
+            "Cool weather",
+            "Weekend project",
+            "Vegetable-heavy",
+            "Occasional reminder"
+          ],
+          "ingredients": {
+            "required": [
+              "spinach",
+              "paneer",
+              "onions",
+              "garlic",
+              "ginger",
+              "garam masala"
+            ],
+            "optional": [
+              "Greek yogurt",
+              "cream",
+              "homemade naan"
+            ]
+          }
+        },
+        {
+          "id": "aloo-gobi",
+          "name": "Aloo gobi with naan",
+          "summary": "Spiced potatoes and cauliflower, often paired with homemade naan.",
+          "tags": [
+            "Moderate",
+            "30–60 minutes",
+            "Any season",
+            "Vegetable-heavy",
+            "Occasional reminder"
+          ],
+          "ingredients": {
+            "required": [
+              "potatoes",
+              "cauliflower",
+              "onions",
+              "garlic",
+              "ginger",
+              "garam masala"
+            ],
+            "optional": [
+              "tomatoes",
+              "cilantro",
+              "homemade naan"
+            ]
+          }
+        },
+        {
+          "id": "pasta-salad",
+          "name": "Summer pasta salad",
+          "summary": "A cold pasta salad with cucumber, tomato, olives, and mood-dependent add-ins.",
+          "tags": [
+            "Low",
+            "Under 30 minutes",
+            "Hot weather",
+            "Good cold",
+            "Packed lunch",
+            "Good for using produce",
+            "Regular option"
+          ],
+          "ingredients": {
+            "required": [
+              "pasta",
+              "cucumbers",
+              "tomatoes",
+              "olives"
+            ],
+            "chooseSeveral": {
+              "add-ins": [
+                "feta",
+                "mozzarella",
+                "chickpeas",
+                "bell peppers",
+                "red onions",
+                "spinach",
+                "artichoke hearts"
+              ]
+            },
+            "optional": [
+              "Italian dressing",
+              "olive oil",
+              "vinegar"
+            ]
+          }
+        },
+        {
+          "id": "savory-crepes",
+          "name": "Savory crepes",
+          "summary": "Crepes filled at the table with arugula, ham, cheese, avocado, olives, mushrooms, or other toppings.",
+          "tags": [
+            "Moderate",
+            "30–60 minutes",
+            "Any season",
+            "Good for guests",
+            "Occasional reminder"
+          ],
+          "ingredients": {
+            "required": [
+              "flour",
+              "eggs",
+              "milk"
+            ],
+            "chooseSeveral": {
+              "fillings": [
+                "arugula",
+                "ham",
+                "cheese",
+                "avocados",
+                "olives",
+                "mushrooms"
+              ]
+            },
+            "optional": [
+              "butter"
+            ]
+          }
         }
       ]
     },
@@ -1736,12 +2015,19 @@
               "tortillas",
               "cheese"
             ],
+            "chooseSeveral": {
+              "fillings": [
+                "black beans",
+                "avocados",
+                "mushrooms",
+                "spinach",
+                "jalapeños",
+                "onions"
+              ]
+            },
             "optional": [
-              "beans",
-              "vegetables",
-              "kimchi",
-              "Greek yogurt",
-              "salsa"
+              "salsa",
+              "Japanese mayonnaise"
             ]
           },
           "nutrition": {
@@ -1759,7 +2045,8 @@
               12
             ],
             "notes": "Beans and vegetables raise fiber."
-          }
+          },
+          "summary": "A fast tortilla-and-cheese meal with flexible fillings such as black beans, avocado, mushrooms, or spinach."
         },
         {
           "id": "pasta-jar",
@@ -1818,6 +2105,9 @@
               "bread",
               "cheese",
               "tomato soup"
+            ],
+            "optional": [
+              "butter"
             ]
           },
           "nutrition": {
@@ -1835,7 +2125,8 @@
               10
             ],
             "notes": "Cheese, butter, and bread size create most of the range."
-          }
+          },
+          "summary": "A comforting grilled cheese paired with tomato soup."
         }
       ]
     },
@@ -2156,6 +2447,179 @@
               5
             ],
             "notes": "Use the package serving as the most accurate reference."
+          }
+        },
+        {
+          "id": "rice-krispie-treats",
+          "name": "Rice Krispie treats",
+          "summary": "A simple marshmallow cereal treat.",
+          "tags": [
+            "Low",
+            "Under 30 minutes",
+            "Any season",
+            "Occasional reminder"
+          ],
+          "ingredients": {
+            "required": [
+              "crispy rice cereal",
+              "marshmallows",
+              "butter"
+            ]
+          }
+        },
+        {
+          "id": "nutella-banana-crepes",
+          "name": "Nutella banana crepes",
+          "summary": "Dessert crepes with Nutella and sliced banana.",
+          "tags": [
+            "Moderate",
+            "30–60 minutes",
+            "Any season",
+            "Occasional reminder"
+          ],
+          "ingredients": {
+            "required": [
+              "flour",
+              "eggs",
+              "milk",
+              "Nutella",
+              "bananas"
+            ],
+            "optional": [
+              "butter",
+              "powdered sugar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prep",
+      "name": "Meal prep & baking",
+      "items": [
+        {
+          "id": "banana-choc-bread",
+          "name": "Chocolate chip banana bread or muffins",
+          "summary": "Banana bread or muffins with chocolate chips and chia seeds for easy workday prep.",
+          "tags": [
+            "Moderate",
+            "Mostly unattended",
+            "Any season",
+            "Refrigerates well",
+            "Packed lunch",
+            "Regular option"
+          ],
+          "ingredients": {
+            "required": [
+              "bananas",
+              "flour",
+              "eggs",
+              "butter",
+              "chocolate chips",
+              "chia seeds"
+            ],
+            "optional": [
+              "Greek yogurt",
+              "cinnamon"
+            ]
+          }
+        },
+        {
+          "id": "blueberry-muffins",
+          "name": "Blueberry yogurt chia muffins",
+          "summary": "Blueberry muffins enriched with Greek yogurt and chia seeds for packed breakfasts.",
+          "tags": [
+            "Moderate",
+            "Mostly unattended",
+            "Any season",
+            "Refrigerates well",
+            "Packed lunch",
+            "Regular option"
+          ],
+          "ingredients": {
+            "required": [
+              "blueberries",
+              "flour",
+              "eggs",
+              "Greek yogurt",
+              "chia seeds"
+            ],
+            "optional": [
+              "butter",
+              "milk",
+              "vanilla extract"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "snacks-sides",
+      "name": "Snacks & sides",
+      "items": [
+        {
+          "id": "crosshatched-potatoes",
+          "name": "Cross-hatched spiced potatoes",
+          "summary": "Thin cross-hatched potato slices baked until crisp and eaten with ketchup and Japanese mayonnaise. Mostly hands-off baking time.",
+          "tags": [
+            "Low",
+            "Mostly unattended",
+            "Any season",
+            "Side or light meal",
+            "Regular option"
+          ],
+          "ingredients": {
+            "required": [
+              "potatoes",
+              "neutral oil",
+              "ketchup",
+              "Japanese mayonnaise"
+            ],
+            "optional": [
+              "smoked paprika",
+              "garlic powder",
+              "onion powder",
+              "salt",
+              "pepper"
+            ]
+          }
+        },
+        {
+          "id": "popcorn",
+          "name": "Popcorn",
+          "summary": "A quick salty snack to keep around.",
+          "tags": [
+            "Very low",
+            "Under 15 minutes",
+            "Any season",
+            "Pantry-based",
+            "Regular option"
+          ],
+          "ingredients": {
+            "required": [
+              "popcorn kernels"
+            ],
+            "optional": [
+              "butter",
+              "salt"
+            ]
+          }
+        },
+        {
+          "id": "trail-mix",
+          "name": "Trail mix",
+          "summary": "An uncommon but useful shelf-stable quick bite.",
+          "tags": [
+            "No preparation",
+            "Under 5 minutes",
+            "Any season",
+            "Pantry-based",
+            "Rare but enjoyable"
+          ],
+          "ingredients": {
+            "required": [
+              "trail mix"
+            ]
           }
         }
       ]

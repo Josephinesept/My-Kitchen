@@ -29,3 +29,10 @@ The app saves the current week, pantry checks, homemade-staple status, grocery c
 
 NUTRITION
 Calories, protein, and fiber are rough per-serving ranges, not calculated nutrition facts.
+
+VERSION 5.2
+- Adds occasional Summer rolls and Teriyaki salmon meals.
+- Adds milk, relish, lemonade powder, Trader Joe's matcha latte mix, instant coffee, and hoisin sauce to pantry options.
+
+
+Version 5.3 adds favorites, last-made tracking, recipe readiness, four weekly-plan generators (Favorites, Favorites + Surprise, Smallest Shop, Random), and the newly discussed meals and pantry items.
