@@ -1,4 +1,8 @@
-JOSEPHINE'S KITCHEN — VERSION 5.1
+JOSEPHINE'S KITCHEN — VERSION 5.x
+
+USE
+- Track ingredients needed for weekly shops based on planned meals
+- Choose from commonly made meals to build weekly meal plans, which auto generation available. 
 
 FILES
 - index.html: the complete app, with all meal data embedded so it works by itself.
